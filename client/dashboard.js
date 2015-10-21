@@ -1,6 +1,9 @@
 var intervalTime;
 var intervalLocation;
 
+Session.setDefault("lat", "0");
+Session.setDefault("lng", "0");
+
 var getLocation = function() {
   console.log("called getLocation()");
   var l = Geolocation.currentLocation();
@@ -39,21 +42,21 @@ Template.dashboard.helpers({
     if (ll) {
       Session.set("lat", ll.lat);
       Session.set("lng", ll.lng);
+      Meteor.call('getWeather', ll.lat, ll.lng, function (error, result) {
+        if (error) {
+          console.log("error", error);
+        }
+        if (result) {
+          Session.set("weatherData", result);
+        };
+      });
     };
     return Session.get("lat") + "," + Session.get("lng");
-    // return "some dumb location data";
   },
   weather: function() {
-    var weatherData = null;
-    Meteor.call('getWeather', Session.get("lat"), Session.get("lng"), function (error, result) {
-      console.log("result of the call to getWeather:");
-      console.log(result);
-      console.log("error of the call to getWeather:");
-      console.log(error);
-      weatherData = result;
-    });
-    console.log("weatherData is : " + weatherData);
-    return weatherData;
+    // maybe just return data stored in Session vars? And setting that data will happen elsewhere?
+    var weatherData = Session.get("weatherData");
+    return weatherData.currently.temperature + " " + weatherData.currently.summary;
   }
 });
 
