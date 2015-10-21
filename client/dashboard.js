@@ -39,11 +39,12 @@ Template.dashboard.helpers({
     console.log("called the location() helper");
     var ll = Geolocation.latLng();
     // only set Session lat and lng if they have changed enough since the last time
-    if (ll) {
-      setLatLng(ll);
-      Session.set("lat", ll.lat);
-      Session.set("lng", ll.lng);
-      Meteor.call('getWeather', ll.lat, ll.lng, function (error, result) {
+    if (ll && setLatLng(ll.lat, ll.lng)) {
+      console.log("`ll` is valid and location has changed");
+      // setLatLng(ll);
+      // Session.set("lat", ll.lat);
+      // Session.set("lng", ll.lng);
+      Meteor.call('getWeather', Session.get('lat'), Session.get('lng'), function (error, result) {
         if (error) {
           console.log("error", error);
         }
@@ -57,7 +58,9 @@ Template.dashboard.helpers({
   weather: function() {
     // maybe just return data stored in Session vars? And setting that data will happen elsewhere?
     var weatherData = Session.get("weatherData");
-    return weatherData.currently.temperature + " " + weatherData.currently.summary;
+    if (weatherData) {
+      return weatherData.currently.temperature + " " + weatherData.currently.summary;
+    };
   }
 });
 
