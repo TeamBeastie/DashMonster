@@ -40,6 +40,7 @@ Template.dashboard.helpers({
     var ll = Geolocation.latLng();
     // only set Session lat and lng if they have changed enough since the last time
     if (ll) {
+      setLatLng(ll);
       Session.set("lat", ll.lat);
       Session.set("lng", ll.lng);
       Meteor.call('getWeather', ll.lat, ll.lng, function (error, result) {
