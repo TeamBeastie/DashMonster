@@ -1,9 +1,13 @@
 var intervalTime;
-var intervalLocation;
+var intervalArrivals;
 var intervalWeather;
 
 // Session.setDefault("lat", "0");
 // Session.setDefault("lng", "0");
+Session.setDefault("stops", [
+  {route: 14, stopLocation: "SE Hawthorne and SE 30th Ave", stopId: 2616},
+  {route: 15, stopLocation: "SE Belmont and SE 30th Ave", stopId: 417}
+]);
 
 // var getLocation = function() {
 //   console.log("called getLocation()");
@@ -26,9 +30,40 @@ var getWeather = function() {
   });
 }
 
-var getArrivals = function(arg) {
-  console.log("getArrivals called with: ");
-  console.log(arg);
+var getAllArrivals = function() {
+  // for each stop we care about, make a call to Meteor method `getArrivals()`
+  // when all data has come back, set the session vars
+  // console.log("getArrivals called with");
+  // console.log(arg);
+  var stops = Session.get('stops');
+  stops.forEach(function(e) {
+    Meteor.call('getArrivals', e.stopId, e.route, function (error, result) {
+      if (error) {
+        console.log("error", error);
+      }
+      if (result) {
+        console.log("got data back from Meteor.getArrivals():");
+        console.log(result);
+        // console.log("got result", result);
+        var k = String(e.stopId) + "-" + String(e.route);
+        console.log(k);
+        console.log(typeof k);
+        Session.set(k, result);
+        console.log("Now get the value of Session ", k);
+        console.log(Session.get(k));
+      };
+    });
+  })
+  /*
+  Meteor.call('getArrivals', 2616, 14, function (error, result) {
+    if (error) {
+      console.log("error", error);
+    }
+    if (result) {
+      console.log("got result", result);
+    };
+  });
+  */
   // console.log(Template.dashboard);
 }
 
@@ -41,12 +76,15 @@ Template.dashboard.onCreated(function() {
   intervalWeather = Meteor.setInterval(function() {
     getWeather();
   }, 1000 * 60 * 15);
-  getArrivals(this);
+  getAllArrivals();
+  // intervalArrivals = Meteor.setInterval(function() {
+    // getAllArrivals();
+  // }, 1000 * 60);
   // TODO call a function every 60s that makes TriMet API calls for each stop that we care about
 })
 
 Template.dashboard.onRendered(function() {
-  console.log(this);
+  // console.log(this);
   // console.log("Dashboard Template rendered");
 })
 
@@ -80,12 +118,14 @@ Template.dashboard.helpers({
     // console.log(weatherData);
     return weatherData;
   },
-  stops: [
-    {route: 14, stopLocation: "SE Hawthorne and SE 30th Ave", stopId: 2616},
-    {route: 15, stopLocation: "SE Belmont and SE 30th Ave", stopId: 417}
-    // {route: "14", stopLocation: "SE Hawthorne and SE 30th Ave", arrivals: "0, 6 and 24 minutes"},
-    // {route: "15", stopLocation: "SE Belmont and SE 30th Ave", arrivals: "6, 12 and 39 minutes"}
-  ]
+  stops: Session.get('stops')
+  // stops:
+  // [
+  //   {route: 14, stopLocation: "SE Hawthorne and SE 30th Ave", stopId: 2616},
+  //   {route: 15, stopLocation: "SE Belmont and SE 30th Ave", stopId: 417}
+  //   // {route: "14", stopLocation: "SE Hawthorne and SE 30th Ave", arrivals: "0, 6 and 24 minutes"},
+  //   // {route: "15", stopLocation: "SE Belmont and SE 30th Ave", arrivals: "6, 12 and 39 minutes"}
+  // ]
 });
 
 Template.dashboard.events({
@@ -97,7 +137,22 @@ Template.dashboard.events({
 
 Template.stop.helpers({
   arrivals: function(stopId, route) {
+    console.log("arrivals helper called");
     var k = String(stopId) + "-" + String(route)
-    return Session.get(k)
+    var trimetData = Session.get(k);
+    console.log("trimetData is:");
+    console.log(trimetData);
+    if (trimetData) {
+      console.log("raw value of Session " + k);
+      console.log(trimetData);
+      trimetData = JSON.parse(trimetData);
+      return trimetData.resultSet.arrival[0].estimated
+      // return "data...";
+    };
+
+    // loop over the trimetData and build a string of arrival times
+    // var arrivals = "0, 1, and 2 minutes"
+    // return trimetData.resultSet.arrivals[0].estimated;
+    // return arrivals
   }
 })
