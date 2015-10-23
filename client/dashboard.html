@@ -5,9 +5,19 @@
   <h2>Location</h2>
   <p>{{location}}</p>
   <h2>Weather</h2>
-  <p>{{weather}}</p>
+  {{#with weather}}
+    <p>{{currently.temperature}}</p>
+    <p>{{currently.summary}}</p>
+  {{/with}}
   <h2>Transit</h2>
-  <h3>14 - Hawthorne</h3>
-  <h3>15 - Belmont</h3>
+  {{#each stops}}
+    {{> stop}}
+  {{/each}}
   <button class="refresh">Refresh</button>
+</template>
+
+
+<template name="stop">
+  <h3>{{route}} - {{stopLocation}}</h3>
+  <p>{{arrivals stopId route}}</p>
 </template>

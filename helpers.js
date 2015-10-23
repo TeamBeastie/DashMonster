@@ -1,5 +1,5 @@
 setLatLng = function(lat, lng) {
-  console.log("called setLatLng with: ", lat, lng);
+  // console.log("called setLatLng with: ", lat, lng);
   var changed = false;
   var oldLat = Session.get('lat')
   var oldLng = Session.get('lng')

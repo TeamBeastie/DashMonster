@@ -1,3 +1,10 @@
+todos:  
+- store temp and conditions in own Session vars
+- dummy helpers for transit info
+- update transit info every 60s
+
+
+
 How it should work:  
 - on app launch, get the location
 - whenever the location has changed, fetch the weather for that new location
