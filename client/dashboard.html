@@ -6,8 +6,7 @@
   <p>{{location}}</p>
   <h2>Weather</h2>
   {{#with weather}}
-    <p>{{currently.temperature}}</p>
-    <p>{{currently.summary}}</p>
+    <p>{{temp}} {{conditions}}</p>
   {{/with}}
   <h2>Transit</h2>
   {{#each stops}}

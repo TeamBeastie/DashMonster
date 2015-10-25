@@ -9,8 +9,7 @@ Meteor.methods({
     // TODO: have a collection of cached weather data the check first
     var apiUrl = "https://api.forecast.io/forecast/" + API_KEY_FORECAST + "/" + lat + "," + lng;
     var weather = HTTP.get(apiUrl, {params: {data: "JSONP"}});
-    weather = JSON.parse(weather.content);
-    return weather;
+    return weather.content;
   },
   // takes a stopId and route, returns entire result of the TriMet API call
   // as JSON text.

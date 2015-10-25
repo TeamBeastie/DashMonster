@@ -126,16 +126,16 @@ Template.dashboard.helpers({
     };
   },
   weather: function() {
-    // maybe just return data stored in Session vars? And setting that data will happen elsewhere?
     var weatherData = Session.get("weatherData");
-    // console.log(weatherData);
-    return weatherData;
+    var weather = {};
+    weather.temp = Math.round(weatherData.currently.temperature);
+    weather.conditions = weatherData.currently.summary;
+    return weather;
   }
 });
 
 Template.dashboard.events({
   'click button.refresh': function () {
     console.log("clicked the REFRESH button");
-    // Session.set('counter', Session.get('counter') + 1);
   }
 });
