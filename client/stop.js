@@ -7,6 +7,10 @@ Template.stop.helpers({
     if (etas && etas[k]) {
       var theseETAs = etas[k].map(function(e) {
         // `e` is the ETA in ms
+        // use seconds:
+        // var seconds = e / 1000
+        // return Math.max(Math.floor(seconds), 0);
+        // use minutes:
         var minutes = e / 1000 / 60
         return Math.max(Math.floor(minutes), 0);
       })
