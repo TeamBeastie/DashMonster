@@ -1,0 +1,9 @@
+- show ETAs as seconds, not minutes rounded down
+- update ETAs every second
+	iterate over the contents of each session var and redo the math
+- make Meteor Collections for locations, stops, reminders
+	locations and reminders are associated with a userId
+	stops are associated with a location ID
+
+
+Right now, the Stop template is linked to a Session var that contains the latest TriMet arrival info for a given stop and bus line. So the Stop templates only render when the TriMet data has been updated, which only happens every 60s. Instead, the Stop template needs to 
