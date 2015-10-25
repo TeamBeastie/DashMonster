@@ -13,12 +13,10 @@ Meteor.methods({
     return weather;
   },
   // takes a stopId and route, returns entire result of the TriMet API call
+  // as JSON text.
   getArrivals: function(stopId, route) {
-    console.log("called getTransit with stopId: ", stopId);
-    console.log("called getTransit with route: ", route);
     var apiUrl = "https://developer.trimet.org/ws/v2/arrivals/json/true/locIDs/" + stopId + "/arrivals/3/appID/" + API_KEY_TRIMET;
     var info = HTTP.get(apiUrl);
-    // return JSON.parse(info.content);
     return info.content;
   }
 })

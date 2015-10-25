@@ -1,5 +1,6 @@
 var intervalTime;
-var intervalArrivals;
+var intervalFetchArrivals;
+var intervalUpdateETAs; // recompute ETAs based on new Date() vs. last fetched ETAs
 var intervalWeather;
 
 // Session.setDefault("lat", "0");
@@ -8,13 +9,6 @@ Session.setDefault("stops", [
   {route: 14, stopLocation: "SE Hawthorne and SE 30th Ave", stopId: 2616},
   {route: 15, stopLocation: "SE Belmont and SE 30th Ave", stopId: 417}
 ]);
-
-// var getLocation = function() {
-//   console.log("called getLocation()");
-//   var l = Geolocation.currentLocation();
-//   var ll = Geolocation.latLng();
-//   return ll.lat + "," + ll.lng;
-// }
 
 var getWeather = function() {
   console.log("called getWeather at ", new Date());
@@ -77,10 +71,9 @@ Template.dashboard.onCreated(function() {
     getWeather();
   }, 1000 * 60 * 15);
   getAllArrivals();
-  // intervalArrivals = Meteor.setInterval(function() {
-    // getAllArrivals();
-  // }, 1000 * 60);
-  // TODO call a function every 60s that makes TriMet API calls for each stop that we care about
+  intervalFetchArrivals = Meteor.setInterval(function() {
+    getAllArrivals();
+  }, 1000 * 60);
 })
 
 Template.dashboard.onRendered(function() {
@@ -90,7 +83,7 @@ Template.dashboard.onRendered(function() {
 
 Template.dashboard.onDestroyed(function() {
   Meteor.clearInterval(intervalTime);
-  Meteor.clearInterval(intervalLocation);
+  Meteor.clearInterval(intervalFetchArrivals);
   Meteor.clearInterval(intervalWeather);
 })
 
@@ -140,13 +133,25 @@ Template.stop.helpers({
     console.log("arrivals helper called");
     var k = String(stopId) + "-" + String(route)
     var trimetData = Session.get(k);
-    console.log("trimetData is:");
-    console.log(trimetData);
     if (trimetData) {
-      console.log("raw value of Session " + k);
-      console.log(trimetData);
       trimetData = JSON.parse(trimetData);
-      return trimetData.resultSet.arrival[0].estimated
+      var etas = [];
+      var now = new Date();
+      var arrivals = trimetData.resultSet.arrival;
+      _.forEach(arrivals, function(e, i) {
+        if (!e.estimated) {
+          e.estimated = e.scheduled;
+        }
+        var eta = Math.round((e.estimated - now) / 60000);
+        if (eta === 0) eta = "Now"
+        etas.push(eta);
+      });
+      // if the array is [0, 2], it becomes [0, and 2 minutes]
+      // if the array is [0, 2, 4], it becomes [0, 2, and 2 minutes]
+      etas = _.map(etas, function(e, i, a) {
+        return e;
+      })
+      return etas.join(", ") + " Minutes"
       // return "data...";
     };
 
