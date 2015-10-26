@@ -95,7 +95,11 @@ var updateETAs = function(template) {
   var etas = Session.get('etas');
   for (var k in trimetData) {
     var data = JSON.parse(trimetData[k]);
+    var route = k.split("-").pop();
     var arrivals = data.resultSet.arrival;
+    arrivals = arrivals.filter(function(e) {
+      return e.route === parseInt(route);
+    });
     var theseEtas = arrivals.map(function(e) {
       if (!e.estimated) {
         e.estimated = e.scheduled;
