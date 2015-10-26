@@ -4,9 +4,9 @@ var intervalUpdateETAs; // recompute ETAs based on new Date() vs. last fetched E
 var intervalWeather;
 
 // how frequently to fetch and/or update our data?
-var timeoutFetchArrivals = 30 * 1000;
-var timeoutFetchWeather = 15 * 60 * 1000;
-var timeoutUpdateETAs = 1 * 1000;
+const TIMEOUT_FETCH_ARRIVALS = 30 * 1000;
+const TIMEOUT_FETCH_WEATHER = 15 * 60 * 1000;
+const TIMEOUT_UPDATE_ETAS = 1 * 1000;
 
 Template.dashboard.onCreated(function() {
   console.log("Dashboard Template created");
@@ -19,14 +19,14 @@ Template.dashboard.onCreated(function() {
   }, 1000);
   intervalWeather = Meteor.setInterval(function() {
     getWeather();
-  }, timeoutFetchWeather);
+  }, TIMEOUT_FETCH_WEATHER);
   getAllArrivals(tmpl);
   intervalFetchArrivals = Meteor.setInterval(function() {
     getAllArrivals(tmpl);
-  }, timeoutFetchArrivals);
+  }, TIMEOUT_FETCH_ARRIVALS);
   intervalUpdateETAs = Meteor.setInterval(function() {
     updateETAs();
-  }, timeoutUpdateETAs)
+  }, TIMEOUT_UPDATE_ETAS)
 })
 
 Template.dashboard.onRendered(function() {
@@ -41,81 +41,16 @@ Template.dashboard.onDestroyed(function() {
   Meteor.clearInterval(intervalUpdateETAs);
 })
 
-var getWeather = function() {
-  console.log("called getWeather at ", new Date());
-  var lat = Session.get('lat');
-  var lng = Session.get('lng');
-  Meteor.call('getWeather', lat, lng, function (error, result) {
-    if (error) {
-      console.log("error", error);
-    }
-    if (result) {
-      Session.set("weatherData", result);
-    };
-  });
-}
-
-// makes a call to the TriMet API for each stop we are concerned about
-// stores the results of the API calls on a Session.trimet object
-// called at an interval of 60s
-var getAllArrivals = function(template) {
-  // for each stop we care about, make a call to Meteor method `getArrivals()`
-  // when all data has come back, set the session vars
-  // console.log("getArrivals called with");
-  // console.log(arg);
-  var stops = template.data.stops.fetch();
-  stops.forEach(function(e) {
-    Meteor.call('getArrivals', e.stopId, e.line, function (error, result) {
-      if (error) {
-        console.log("error", error);
-      }
-      if (result) {
-        var k = String(e.stopId) + "-" + String(e.line);
-        var trimetData = Session.get('trimet');
-        trimetData[k] = result;
-        Session.set('trimet', trimetData);
-        // we could immediately updateETAs here, since we just got
-        // new data, but this is overkill since ETAs are updated
-        // every second already.
-        // updateETAs(template);
-      };
-    });
-  })
-}
-
-// called every second or so. loops over the Session.trimet object
-// and updates the related Session.etas object with the current ETA
-// for each arrival object on the Session.trimet object
-var updateETAs = function(template) {
-  var now = new Date();
-  // loop over the Session.trimet object. Each key contains raw trimet JSON data. loop over the `arrival` array on each trimet data obj. Compute the ETA in seconds and store it as an array on Session.etas[k]
-  var trimetData = Session.get('trimet');
-  var etas = Session.get('etas');
-  for (var k in trimetData) {
-    var data = JSON.parse(trimetData[k]);
-    var route = k.split("-").pop();
-    var arrivals = data.resultSet.arrival;
-    arrivals = arrivals.filter(function(e) {
-      return e.route === parseInt(route);
-    });
-    var theseEtas = arrivals.map(function(e) {
-      if (!e.estimated) {
-        e.estimated = e.scheduled;
-      }
-      return (e.estimated - now);
-    })
-    etas[k] = theseEtas;
-    Session.set('etas', etas);
-  }
-}
-
 Template.dashboard.helpers({
   counter: function () {
     return Session.get('counter');
   },
-  time: function() {
+  date: function() {
+    var date = {};
     var now = Session.get("now");
-    return now;
+    date.day = moment(now).format("dddd, MMMM Do YYYY")
+    date.time = moment(now).format("h:mm:ss A")
+    return date;
   },
   location: function() {
     // console.log("called the location() helper");
@@ -143,5 +78,8 @@ Template.dashboard.helpers({
 Template.dashboard.events({
   'click button.refresh': function () {
     console.log("clicked the REFRESH button");
+  },
+  'click button.logout': function(e) {
+    Meteor.logout();
   }
 });

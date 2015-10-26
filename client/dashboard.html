@@ -1,6 +1,9 @@
 <template name="dashboard">
   <h1>A Very Simple Dashboard</h1>
-  <h2>Time</h2>
+  {{#with date}}
+    <h6>{{day}}</h6>
+    <h3>{{time}}</h3>
+  {{/with}}
   <p>{{time}}</p>
   <h2>Location</h2>
   <p>{{location}}</p>
@@ -13,9 +16,9 @@
     {{/if}}
   {{/with}}
 
-  <h2>Transit</h2>
   {{#each stops}}
     {{> stop}}
   {{/each}}
   <button class="refresh">Refresh</button>
+  <button class="logout">Log Out</button>
 </template>
