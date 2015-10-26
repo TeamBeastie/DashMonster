@@ -6,8 +6,13 @@
   <p>{{location}}</p>
   <h2>Weather</h2>
   {{#with weather}}
-    <p>{{temp}} {{conditions}}</p>
+    {{#if loadingMsg}}
+      <p>{{loadingMsg}}</p>
+    {{else}}
+      <p>{{temp}} {{conditions}}</p>
+    {{/if}}
   {{/with}}
+
   <h2>Transit</h2>
   {{#each stops}}
     {{> stop}}

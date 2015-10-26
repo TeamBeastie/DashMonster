@@ -130,10 +130,14 @@ Template.dashboard.helpers({
     };
   },
   weather: function() {
-    var weatherData = JSON.parse(Session.get("weatherData"));
-    var weather = {};
-    weather.temp = Math.round(weatherData.currently.temperature);
-    weather.conditions = weatherData.currently.summary;
+    var weatherData = Session.get("weatherData");
+    var weather = {loadingMsg: "...Getting Weather..."};
+    if (weatherData) {
+      weatherData = JSON.parse(weatherData);
+      weather.temp = Math.round(weatherData.currently.temperature);
+      weather.conditions = weatherData.currently.summary;
+      weather.loadingMsg = false;
+    }
     return weather;
   }
 });

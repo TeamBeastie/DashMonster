@@ -15,6 +15,8 @@ Template.stop.helpers({
         return Math.max(Math.floor(minutes), 0);
       })
       return theseETAs.join(", ") + " Minutes"
-    };
+    } else {
+      return "Getting arrivals..."
+    }
   }
 })
