@@ -73,8 +73,6 @@ var getAllArrivals = function(template) {
         var k = String(e.stopId) + "-" + String(e.line);
         var trimetData = Session.get('trimet');
         trimetData[k] = result;
-        console.log("trimetData is now:");
-        console.log(trimetData);
         Session.set('trimet', trimetData);
         // we could immediately updateETAs here, since we just got
         // new data, but this is overkill since ETAs are updated

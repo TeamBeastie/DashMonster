@@ -16,7 +16,6 @@ Meteor.methods({
   // as JSON text.
   getArrivals: function(stopId, route) {
     this.unblock();
-    console.log("called getArrivals for stopId", stopId, "at", new Date());
     var apiUrl = "https://developer.trimet.org/ws/v2/arrivals/json/true/locIDs/" + stopId + "/arrivals/3/appID/" + API_KEY_TRIMET;
     var info = HTTP.get(apiUrl);
     return info.content;
