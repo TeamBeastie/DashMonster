@@ -1,14 +1,10 @@
-- make the collections for all our data
-- make two users on in the fixtures.js file
-- make two locations for each user (home, school, work, etc)
-- each location will have two different bus stops they are concerned with
-- 
 
-todos:  
+
+todos:
 
 
 
-How it should work:  
+How it should work:
 - on app launch, get the location
 - whenever the location has changed, fetch the weather for that new location
   - but don't actually change the lat/lng if it hasn't changed enough since it was last saved

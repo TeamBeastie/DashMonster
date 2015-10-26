@@ -1,9 +1,13 @@
-- show ETAs as seconds, not minutes rounded down
-- update ETAs every second
+- log in, go to dashboard
+- every time geolocation updates, check all Locations to find the closest stored location and set it as `currentLocation`
+- when `currentLocation` has been set, show only the stops for that location.
+
+- show ETAs as seconds, not minutes rounded down @done
+- update ETAs every second @done
 	iterate over the contents of each session var and redo the math
 - make Meteor Collections for locations, stops, reminders
 	locations and reminders are associated with a userId
-	stops are associated with a location ID
+	stops are associated with a location ID @done
 
 
-Right now, the Stop template is linked to a Session var that contains the latest TriMet arrival info for a given stop and bus line. So the Stop templates only render when the TriMet data has been updated, which only happens every 60s. Instead, the Stop template needs to 
+Right now, the Stop template is linked to a Session var that contains the latest TriMet arrival info for a given stop and bus line. So the Stop templates only render when the TriMet data has been updated, which only happens every 60s. Instead, the Stop template needs to

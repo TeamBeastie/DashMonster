@@ -16,6 +16,7 @@ if (Meteor.users.find().count() === 0) {
     userId: joe
   });
   var joeHomeStop1 = Stops.insert({
+    userId: joe,
     locationId: joeHome,
     stopId: 2616,
     line: 14
@@ -28,6 +29,7 @@ if (Meteor.users.find().count() === 0) {
     userId: joe
   });
   var joeWorkStop1 = Stops.insert({
+    userId: joe,
     locationId: joeWork,
     stopId: 3635,
     line: 14
@@ -40,11 +42,13 @@ if (Meteor.users.find().count() === 0) {
     userId: joe
   });
   var joeSchoolStop1 = Stops.insert({
+    userId: joe,
     locationId: joeSchool,
     stopId: 11011,
     line: 195 /* B Loop */
   });
   var joeSchoolStop2 = Stops.insert({
+    userId: joe,
     locationId: joeSchool,
     stopId: 7618,
     line: 290 /* MAX Orange Line */
@@ -72,7 +76,7 @@ if (Meteor.users.find().count() === 0) {
     userId: bob
   });
 };
-
+/*
 if (Stops.find().count() === 0) {
   Stops.insert({
     line: 14,
@@ -86,3 +90,4 @@ if (Stops.find().count() === 0) {
     location: "SE Belmont and SE 30th Ave"
   });
 }
+*/
