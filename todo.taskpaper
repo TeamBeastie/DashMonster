@@ -1,6 +1,8 @@
-- log in, go to dashboard
+- log in, go to dashboard @done
 - every time geolocation updates, check all Locations to find the closest stored location and set it as `currentLocation`
 - when `currentLocation` has been set, show only the stops for that location.
+- each stop needs to show the location of the stop and bus destination
+- 
 
 - show ETAs as seconds, not minutes rounded down @done
 - update ETAs every second @done

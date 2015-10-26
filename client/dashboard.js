@@ -76,9 +76,6 @@ Template.dashboard.helpers({
 });
 
 Template.dashboard.events({
-  'click button.refresh': function () {
-    console.log("clicked the REFRESH button");
-  },
   'click button.logout': function(e) {
     Meteor.logout();
   }
