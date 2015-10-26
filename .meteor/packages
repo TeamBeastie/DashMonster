@@ -20,3 +20,4 @@ mdg:geolocation
 http
 iron:router
 twbs:bootstrap
+accounts-password
