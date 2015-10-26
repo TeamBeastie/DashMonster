@@ -1,7 +1,10 @@
+- make the collections for all our data
+- make two users on in the fixtures.js file
+- make two locations for each user (home, school, work, etc)
+- each location will have two different bus stops they are concerned with
+- 
+
 todos:  
-- store temp and conditions in own Session vars
-- dummy helpers for transit info
-- update transit info every 60s
 
 
 

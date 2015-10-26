@@ -126,7 +126,7 @@ Template.dashboard.helpers({
     };
   },
   weather: function() {
-    var weatherData = Session.get("weatherData");
+    var weatherData = JSON.parse(Session.get("weatherData"));
     var weather = {};
     weather.temp = Math.round(weatherData.currently.temperature);
     weather.conditions = weatherData.currently.summary;
