@@ -6,7 +6,7 @@ var intervalWeather;
 // how frequently to fetch and/or update our data?
 const TIMEOUT_FETCH_ARRIVALS = 30 * 1000;
 const TIMEOUT_FETCH_WEATHER = 15 * 60 * 1000;
-const TIMEOUT_UPDATE_ETAS = 1 * 1000;
+const TIMEOUT_UPDATE_ETAS = 5 * 1000;
 
 Template.dashboard.onCreated(function() {
   console.log("Dashboard Template created");
@@ -53,14 +53,16 @@ Template.dashboard.helpers({
     return date;
   },
   location: function() {
-    // console.log("called the location() helper");
     var ll = Geolocation.latLng(); // this is reactive and fires quite a few times on startup as the location is refined
     if (ll && setLatLng(ll.lat, ll.lng)) {
       getWeather();
+      console.log(findNearestSavedLocation(ll.lat, ll.lng));
     };
     if (Session.get("lat")) {
       return Session.get("lat") + "," + Session.get("lng");
-    };
+    } else {
+      return "locating...";
+    }
   },
   weather: function() {
     var weatherData = Session.get("weatherData");

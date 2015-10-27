@@ -1,3 +1,32 @@
+setLatLng = function(lat, lng) {
+  var changed = false;
+  var oldLat = Session.get('lat')
+  var oldLng = Session.get('lng')
+  var newLat = lat.toFixed(3);
+  var newLng = lng.toFixed(3);
+  if (newLat !== oldLat) {
+    Session.set('lat', newLat);
+    changed = true;
+  }
+  if (newLng !== oldLng) {
+    Session.set('lng', newLng);
+    changed = true;
+  }
+  return changed;
+}
+
+findNearestSavedLocation = function(lat, lng) {
+  // loop over all the Locations and find the closest one
+  var locationsWithDistance = Locations.find().map(function (loc) {
+    loc.distance = Math.pow(loc.lat - lat, 2) + Math.pow(loc.lng - lng, 2);
+    return loc;
+  });
+  locationsWithDistance.sort(function(a, b) {
+    return a.distance - b.distance;
+  })
+  return locationsWithDistance.shift();
+}
+
 getWeather = function() {
   console.log("called getWeather at ", new Date());
   var lat = Session.get('lat');
