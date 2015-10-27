@@ -14,13 +14,13 @@ Template.dashboard.onCreated(function() {
   Session.set("now", new Date());
   Session.setDefault('etas', {});
   Session.setDefault('trimet', {});
+  getAllArrivals(tmpl);
   intervalTime = Meteor.setInterval(function() {
     Session.set("now", new Date());
   }, 1000);
   intervalWeather = Meteor.setInterval(function() {
     getWeather();
   }, TIMEOUT_FETCH_WEATHER);
-  getAllArrivals(tmpl);
   intervalFetchArrivals = Meteor.setInterval(function() {
     getAllArrivals(tmpl);
   }, TIMEOUT_FETCH_ARRIVALS);
@@ -56,10 +56,10 @@ Template.dashboard.helpers({
     var ll = Geolocation.latLng(); // this is reactive and fires quite a few times on startup as the location is refined
     if (ll && setLatLng(ll.lat, ll.lng)) {
       getWeather();
-      console.log(findNearestSavedLocation(ll.lat, ll.lng));
+      Session.set('location', findNearestSavedLocation(ll.lat, ll.lng));
     };
-    if (Session.get("lat")) {
-      return Session.get("lat") + "," + Session.get("lng");
+    if (Session.get('location')) {
+      return Session.get('location').name;
     } else {
       return "locating...";
     }
