@@ -49,7 +49,11 @@ getAllArrivals = function(template) {
   // when all data has come back, set the session vars
   // console.log("getArrivals called with");
   // console.log(arg);
-  var stops = template.data.stops.fetch();
+  var stops = Session.get('stops');
+  if (!stops) {return};
+  console.log("stops:");
+  console.log(stops);
+  // var stops = template.data.stops.fetch();
   stops.forEach(function(e) {
     Meteor.call('getArrivals', e.stopId, e.line, function (error, result) {
       if (error) {

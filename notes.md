@@ -1,4 +1,4 @@
-
+now that I am using a relevantStops helper on the Dashboard template to list the bus arrivals, my `getAllArrivals` function in helpers.js has issues. It gets the list of stops from the `template.data.stops` cursor, which is not what we want. That makes TriMet API calls for all stops for this user, not just the ones they are concerned about based on their current location
 
 todos:
 

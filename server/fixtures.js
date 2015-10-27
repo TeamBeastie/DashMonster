@@ -11,6 +11,7 @@ if (Meteor.users.find().count() === 0) {
   var joeHome = Locations.insert({
     name: "Home",
     address: "1400 SE 30th Ave Portland, OR 97214",
+    // lat: 44.512495,
     lat: 45.512495,
     lng: -122.634825,
     userId: joe
@@ -20,6 +21,12 @@ if (Meteor.users.find().count() === 0) {
     locationId: joeHome,
     stopId: 2616,
     line: 14
+  });
+  var joeHomeStop2 = Stops.insert({
+    userId: joe,
+    locationId: joeHome,
+    stopId: 417,
+    line: 15
   });
   var joeWork = Locations.insert({
     name: "Work",

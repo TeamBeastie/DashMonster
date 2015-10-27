@@ -6,7 +6,7 @@ var intervalWeather;
 // how frequently to fetch and/or update our data?
 const TIMEOUT_FETCH_ARRIVALS = 30 * 1000;
 const TIMEOUT_FETCH_WEATHER = 15 * 60 * 1000;
-const TIMEOUT_UPDATE_ETAS = 5 * 1000;
+const TIMEOUT_UPDATE_ETAS = 1 * 1000;
 
 Template.dashboard.onCreated(function() {
   console.log("Dashboard Template created");
@@ -14,7 +14,7 @@ Template.dashboard.onCreated(function() {
   Session.set("now", new Date());
   Session.setDefault('etas', {});
   Session.setDefault('trimet', {});
-  getAllArrivals(tmpl);
+  // getAllArrivals(tmpl);
   intervalTime = Meteor.setInterval(function() {
     Session.set("now", new Date());
   }, 1000);
@@ -56,7 +56,10 @@ Template.dashboard.helpers({
     var ll = Geolocation.latLng(); // this is reactive and fires quite a few times on startup as the location is refined
     if (ll && setLatLng(ll.lat, ll.lng)) {
       getWeather();
-      Session.set('location', findNearestSavedLocation(ll.lat, ll.lng));
+      var loc = findNearestSavedLocation(ll.lat, ll.lng);
+      Session.set('location', loc);
+      Session.set('stops', Stops.find({locationId: loc._id}).fetch());
+      getAllArrivals(this);
     };
     if (Session.get('location')) {
       return Session.get('location').name;
@@ -74,6 +77,9 @@ Template.dashboard.helpers({
       weather.loadingMsg = false;
     }
     return weather;
+  },
+  stops: function() {
+    return Session.get('stops');
   }
 });
 
