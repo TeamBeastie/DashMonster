@@ -18,5 +18,8 @@ Template.stop.helpers({
     } else {
       return "Getting arrivals..."
     }
+  },
+  lineName: function(line) {
+    return line;
   }
 })

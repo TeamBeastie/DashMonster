@@ -68,8 +68,8 @@ Template.dashboard.helpers({
     }
   },
   weather: function() {
-    var weatherData = Session.get("weatherData");
     var weather = {loadingMsg: "...Getting Weather..."};
+    var weatherData = Session.get("weatherData");
     if (weatherData) {
       weatherData = JSON.parse(weatherData);
       weather.temp = Math.round(weatherData.currently.temperature);

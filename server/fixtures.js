@@ -82,6 +82,12 @@ if (Meteor.users.find().count() === 0) {
     lng: -122.6235924,
     userId: bob
   });
+  var bobHomeStop1 = Stops.insert({
+    userId: bob,
+    locationId: bobHome,
+    stopId: 7618,
+    line: 290 /* MAX Orange Line */
+  });
 };
 /*
 if (Stops.find().count() === 0) {
