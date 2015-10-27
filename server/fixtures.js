@@ -31,6 +31,7 @@ if (Meteor.users.find().count() === 0) {
   var joeWork = Locations.insert({
     name: "Work",
     address: "1221 SW 1st Ave Portland, OR 97204",
+    // lat: 44.514428,
     lat: 45.514428,
     lng: -122.675421,
     userId: joe

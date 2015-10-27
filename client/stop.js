@@ -19,7 +19,34 @@ Template.stop.helpers({
       return "Getting arrivals..."
     }
   },
-  lineName: function(line) {
-    return line;
+  lineName: function(stopId, route) {
+    var k = String(stopId) + "-" + String(route);
+    var trimetData = Session.get('trimet')[k];
+    if (trimetData) {
+      var arrivals = JSON.parse(trimetData).resultSet.arrival;
+      var firstMatch = null;
+      for (var i = 0; i < arrivals.length; i++) {
+        var e = arrivals[i];
+        if (e.route === route) {
+          firstMatch = e;
+          break;
+        };
+      }
+      var lineName = firstMatch.shortSign;
+      var regexNumber = /^\d/;
+      var regexLine = /Line/;
+      var regexStreetcar = /Streetcar/;
+      if (regexNumber.test(lineName)) {
+        return lineName.split(" ").shift()
+      }
+      if (regexStreetcar.test(lineName)) {
+        var words = lineName.split(" ");
+        return words[2] + " " + words[3];
+      }
+      if (regexLine.test(lineName)) {
+        var words = lineName.split(" ");
+        return words[0] + " " + words[1];
+      };
+    };
   }
 })
