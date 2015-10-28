@@ -1,5 +1,6 @@
 <template name="dashboard">
-  <h1>A Very Simple Dashboard</h1>
+  <button class="logout">Log Out</button>
+  <h1>Welcome, {{user}}</h1>
   {{#with date}}
     <h6>{{day}}</h6>
     <h3>{{time}}</h3>
@@ -19,5 +20,4 @@
   {{#each stops}}
     {{> stop}}
   {{/each}}
-  <button class="logout">Log Out</button>
 </template>

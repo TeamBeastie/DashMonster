@@ -42,8 +42,8 @@ Template.dashboard.onDestroyed(function() {
 })
 
 Template.dashboard.helpers({
-  counter: function () {
-    return Session.get('counter');
+  user: function () {
+    return Meteor.user().profile.name;
   },
   date: function() {
     var date = {};
@@ -85,6 +85,7 @@ Template.dashboard.helpers({
 
 Template.dashboard.events({
   'click button.logout': function(e) {
-    Meteor.logout();
+    // Meteor.logout();
+    Router.go("/logout")
   }
 });
