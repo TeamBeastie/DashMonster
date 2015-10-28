@@ -61,33 +61,39 @@ if (Meteor.users.find().count() === 0) {
     stopId: 7618,
     line: 290 /* MAX Orange Line */
   });
-  var bob = Accounts.createUser({
-    username: 'bob',
+  var erik = Accounts.createUser({
+    username: 'erik',
     password: 'password',
-    email: 'bob@schmoe.com',
+    email: 'eirkeirkeirk@gmail.com',
     profile: {
-      name: 'Bob Schmoe'
+      name: 'Erik P. Hansen'
     }
   });
-  var bobHome = Locations.insert({
+  var erikHome = Locations.insert({
     name: "Home",
-    address: "99 NE 28th Ave Portland, OR 97232",
-    lat: 45.52284,
-    lng: -122.6394937,
-    userId: bob
+    address: "1400 SE 30th Ave, Portland, OR 97214",
+    lat: 45.512495,
+    lng: -122.634825,
+    userId: erik
   });
-  var bobWork = Locations.insert({
-    name: "Trader Joe's",
-    address: "4715 Se Cesar Chavez Blvd, Portland, OR 97202",
-    lat: 45.4885097,
-    lng: -122.6235924,
-    userId: bob
+  var erikSchool = Locations.insert({
+    name: "xPCS",
+    address: "735 SW 20th Pl, Portland OR 97205",
+    lat: 45.5225829,
+    lng: -122.694479,
+    userId: erik
   });
-  var bobHomeStop1 = Stops.insert({
-    userId: bob,
-    locationId: bobHome,
-    stopId: 7618,
-    line: 290 /* MAX Orange Line */
+  var erikHomeStop = Stops.insert({
+    userId: erik,
+    locationId: erikHome,
+    stopId: 2616,
+    line: 14
+  });
+  var erikSchoolStop = Stops.insert({
+    userId: erik,
+    locationId: erikSchool,
+    stopId: 13169, // 6th and Main
+    line: 14
   });
 };
 /*
