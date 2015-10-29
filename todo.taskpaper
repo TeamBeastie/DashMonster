@@ -1,8 +1,15 @@
+- make a route and template for `profile`.
+- template will have way to edit display name, show Gravatar, list saved locations, add new location
+- make a route and template for `location/:_id`
+- location template will show a map of the location, address field for the location, editable name for the location
+
+
+
 - log in, go to dashboard @done
 - every time geolocation updates, check all Locations to find the closest stored location and set it as `currentLocation`
 - when `currentLocation` has been set, show only the stops for that location.
 - each stop needs to show the location of the stop and bus destination
-- 
+-
 
 - show ETAs as seconds, not minutes rounded down @done
 - update ETAs every second @done

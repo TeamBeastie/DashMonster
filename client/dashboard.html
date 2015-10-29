@@ -1,6 +1,6 @@
 <template name="dashboard">
   <button class="logout">Log Out</button>
-  <h1>Welcome, {{user}}</h1>
+  <h1>Welcome, <a href="{{pathFor 'profile'}}">{{user}}</a></h1>
   {{#with date}}
     <h6>{{day}}</h6>
     <h3>{{time}}</h3>
