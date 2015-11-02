@@ -13,3 +13,8 @@ Template.profile.events({
     Meteor.users.update(Meteor.userId(), {$set: {profile: profile}});
   }
 })
+
+Template.profile.onRendered(function() {
+  Session.set('newAccount', null);
+  delete Session.keys.newAccount;
+})

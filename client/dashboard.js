@@ -9,7 +9,6 @@ const TIMEOUT_FETCH_WEATHER = 15 * 60 * 1000;
 const TIMEOUT_UPDATE_ETAS = 1 * 1000;
 
 Template.dashboard.onCreated(function() {
-  console.log("Dashboard Template created");
   var tmpl = this;
   Session.set("now", new Date());
   Session.setDefault('etas', {});
@@ -30,11 +29,9 @@ Template.dashboard.onCreated(function() {
 })
 
 Template.dashboard.onRendered(function() {
-  console.log("Dashboard Template rendered");
 })
 
 Template.dashboard.onDestroyed(function() {
-  console.log("Dashboard Template destroyed");
   Meteor.clearInterval(intervalTime);
   Meteor.clearInterval(intervalFetchArrivals);
   Meteor.clearInterval(intervalWeather);
