@@ -79,8 +79,10 @@ if (Meteor.users.find().count() === 0) {
   var erikSchool = Locations.insert({
     name: "xPCS",
     address: "735 SW 20th Pl, Portland OR 97205",
-    lat: 45.5225829,
-    lng: -122.694479,
+    lat: 45.5224806,
+    lng: -122.6935936,
+    // lat: 45.5225829,
+    // lng: -122.694479,
     userId: erik
   });
   var erikHomeStop = Stops.insert({
