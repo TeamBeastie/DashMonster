@@ -11,20 +11,11 @@ Template.location.onCreated(function() {
     markers.push(marker);
     google.maps.event.addListener(
       map.instance, 'center_changed', function() {
-        // remove current marker
-        markers[0].setMap(null);
-        markers = [];
-        // add new marker at current center
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(map.instance.center.lat(), map.instance.center.lng()),
-          map: map.instance
-        })
-        markers.push(marker);
-        // console.log(map.instance.center.lat() + "," + map.instance.center.lng());
+        var marker = markers[0];
+        var position = new google.maps.LatLng(map.instance.center.lat(), map.instance.center.lng());
+        marker.setPosition(position);
       }
     )
-    console.log(map);
-    console.log(map.instance);
   })
 })
 
