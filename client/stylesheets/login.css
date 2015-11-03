@@ -1,0 +1,74 @@
+.col-xs-12.header {
+	height: 350px;
+	background: #000;
+	text-align: center;
+	border: 0;
+	margin-bottom: 15px;
+}
+
+svg.logo-oval ellipse:hover {
+	fill: #38FF18;
+
+}
+
+
+div.col-xs-12.login-area {
+	height: 400px;
+	background: #000;
+	border: 0;
+	
+}
+
+a#login-sign-in-link {
+	margin-top: 15px;
+}
+
+div#login-dropdown-list.accounts-dialog {
+	position: relative;
+	height: 300px;
+/*	width: 400px;*/
+	min-width: 300px;
+	max-width: 500px;
+	margin: auto;
+	font-family: 'Oswald', sans-serif;
+	background: #222222;
+	color: #999999;
+	text-align: left;
+	margin-top: -15px;
+	
+}
+
+a.login-close-text {
+	margin-bottom: 10px;
+}
+
+#login-email-label-and-input label,
+#login-password-label-and-input label,
+#login-email-label-and-input input,
+#login-password-label-and-input input,
+#login-buttons-password.login-button.login-button-form-submit,
+a#forgot-password-link,
+a#signup-link {
+	font-family: 'Oswald', sans-serif;
+
+}
+
+#login-email-label-and-input input,
+#login-password-label-and-input input {
+	background: #000;
+}
+
+#login-buttons-password.login-button.login-button-form-submit {
+	height: 40px;
+	background: #000000;
+	color: #38FF18;
+	font-size: 1em;
+	padding-top: 7px;
+	margin-top: 25px
+}
+
+a#forgot-password-link,
+a#signup-link {
+	font-size: 1em;
+	margin-top: 10px;
+}
