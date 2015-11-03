@@ -25,3 +25,4 @@ accounts-ui
 momentjs:moment
 sacha:spin
 dburles:google-maps
+d3js:d3
