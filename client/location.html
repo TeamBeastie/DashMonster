@@ -1,6 +1,9 @@
 <template name="location">
   <h1>LOCATION INFO</h1>
   <h2>{{name}}</h2>
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
   <h2>{{address}}</h2>
   <h2>{{lat}},{{lng}}</h2>
 </template>
