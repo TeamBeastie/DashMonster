@@ -1,8 +1,5 @@
 <template name="login">
   <div class="container">
-	  <h1>Log In</h1>
-  	<p>Please Log In</p>
-	  
 	  <div class="row">
 	  	<div class="col-xs-12 header">
 	  		{{>logo}}
@@ -11,26 +8,39 @@
 
 	  <div class="row">
 	  	<div class="col-xs-12 login-area">
-	  		<div id="login-but">
+	  			
 	  			<form class="login">
-				    <div>
-				      <label>Email Address</label>
-				      <input type="email" placeholder="enter your email" name="email" autofocus>
+		  			<div class="row">
+			  			<div class="col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
+						      <label>EMAIL</label>
+						      <input class="input" type="email" placeholder="enter your email" name="email" autofocus>
+						      <label for="password">PASSWORD</label>
+						      <input class="input" type="password" name="password">
+						  </div>
+					  </div>
+				   
+				    <div class="row">
+				    <div class="col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3 login-button">
+				      <input class="login-button" type="submit" value="LOG IN">
 				    </div>
-				    <div>
-				      <label for="password">Password</label>
-				      <input type="password" name="password">
-				    </div>
-				    <div>
-				      <input type="submit" value="Log In">
 				    </div>
 			  	</form>
-	  		</div>
+
+			  	<div class="row">
+				  	<div class="col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
+					  	<a href="{{pathFor 'signup'}}">
+					  		<div class="col-xs-6 left">Create Account</div>
+					  	</a>
+					  	<a href="{{pathFor '#'}}">
+					  		<div class="col-xs-6 right">Forgot Password?</div>
+					  	</a>
+						</div>
+					</div>
+
 	  	</div>
 	  </div>
-  </div>
+  </div> <!-- end of container -->
 </template>
 
 
-<!-- Erik's Code -->
 
