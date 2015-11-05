@@ -6,10 +6,11 @@
   <input type="submit">
 </form>
 <h2>Locations</h2>
-<ul></ul>
+<ul>
 {{#each locations}}
 <li><a href="{{pathFor 'location'}}">{{name}} ></a></li>
 {{/each}}
+</ul>
 <button class="add-location">Add New Location</button>
 <h2>Reminders</h2>
 <button class="add-reminder">Add New Reminder</button>

@@ -1,8 +1,8 @@
 <template name="location">
   <h1>{{name}}</h1>
-  <h2>{{lat}},{{lng}}</h2>
+  <h6>Drag the map to set a new position</h6>
   <div class="map-container">
     {{> googleMap name="map" options=mapOptions}}
   </div>
-  <h6>Drag the map to set a new position</h6>
+  <button class="cancel">CANCEL</button><button class="save">SAVE</button>
 </template>
