@@ -63,7 +63,8 @@ Template.dashboard.helpers({
     var date = {};
     var now = Session.get("now");
     date.day = moment(now).format("dddd, MMMM Do YYYY")
-    date.time = moment(now).format("h:mm:ss A")
+    date.time = moment(now).format("h:mm:ss")
+    date.meridian = moment(now).format("A")
     return date;
   },
   location: function() {

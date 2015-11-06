@@ -1,0 +1,151 @@
+div.col-xs-12.profile-header{
+	background: #000000;
+	color: #38FF18;
+	border: 0;
+	padding-top: 6px;
+	font-weight: 300;
+	font-size: 1.7em;
+/*	margin-top: -20px;*/
+}
+
+div.col-xs-12.profile-form {
+	height: 80px;
+	text-align: left;
+	border: 0;
+
+}
+
+.name-change {
+	margin-top: 5px;
+	text-align: left;
+}
+
+.name-input {
+	height: 40px;
+	background: #000;
+	width: 100%;
+	font-size: 1.3em;
+	padding-left: 5px;
+	margin-right: 15px;
+	border: 0;	
+}
+
+.name-button {
+	background: blue;
+	height: 40px;
+	text-align: center;
+	padding-top: 3px;
+
+}
+
+.name.submit-button {
+	height: 35px;
+	width: 110%;
+
+
+}
+
+
+
+div.col-xs-12.input {
+	height: 40px;
+	text-align: left;
+	padding-top: 3px;
+	padding-left: 5px;
+	background: #000000;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-bottom: 20px;
+		
+}
+
+div.col-xs-12.location {
+	height: 40px;
+	text-align: left;
+	padding-top: 3px;
+	padding-left: 5px;
+	background: #000000;
+	border-left: 0;
+	border-right: 0;
+	font-weight: 300;
+	font-size: 1.45em;
+	border-top: 0;
+		
+}
+
+ul.locations-list {
+	padding: 0;
+	margin: 0;
+}
+
+div.col-xs-12.input input {
+	background: #000000;
+	border: 0;
+	font-weight: 300;
+	font-size: 1.45em;
+	color: white;
+	padding-top: 2.5px;
+	padding-left: 5px;
+	margin-bottom: 20px;
+}
+
+
+div.col-xs-6.view-link {
+	background: #000000;
+	text-align: right;
+	font-weight: 300;
+	padding-top: 12px;
+	color: #38FF18;
+	margin-right: 0;
+	border: 0;
+
+}
+
+div.col-xs-6.view-link.left {
+	text-align: left;
+	padding-top: 0;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+button.add-location {
+	background: #000;
+	height: 40px;
+	margin-top: -7px;
+/*	margin-bottom: 40px;*/
+	border: 0;
+}
+
+
+
+
+
+span.glyphicon.glyphicon-globe,
+span.glyphicon.glyphicon-road {
+	color: #38FF18;
+	margin-left: 8px;
+	padding-bottom: 2px;
+	font-size: 1.1em;
+}
+
+div.col-xs-12.to-dashboard {
+	background: #38FF18;
+	color: #000000;
+	font-size: 1.55em;
+	font-weight: 400;
+	padding-top: 5.25px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+
+}
+
+div.col-xs-12.to-dashboard:hover {
+	color: #FFF;
+}
+
+
+
+
+
+

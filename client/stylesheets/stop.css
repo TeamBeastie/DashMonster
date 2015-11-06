@@ -2,7 +2,7 @@
 TRANSIT ROUTES
 ////////////////////////////////////////////////////*/
 
-div .col-sm-8.bus-bar {
+div .col-xs-12.bus-bar {
 	height: 60px;
 /*	margin-bottom: 20px;*/
 	border: 0;

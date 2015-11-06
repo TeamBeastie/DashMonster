@@ -32,11 +32,11 @@ a:hover {
 	margin: auto;
 }
 
-.label {
-	/*height: 25px;*/
+
+div.col-xs-12.label {
+	height: 25px;
 	background: #000000;
 	border: 0;
-	border-radius: 0;
 	text-align: left;
 	font-size: 1.2em;
 	font-weight: 300;
@@ -44,9 +44,11 @@ a:hover {
 	padding: 0;
 	padding-top: 2.5px;
 	padding-left: 5px;
-	padding-bottom: 5px;
-	margin-top: 15px;
+	margin-top: 12px;
 	border-bottom: solid 1px #999999;
+	border-radius: 0;
+
+		
 }
 
 .col-xs-6 {
@@ -131,10 +133,12 @@ div.col-xs-6.edit
 }
 
 div.col-xs-12.location-singular:hover{
-	/*height: 40px;*/
-	background: #555555;
-	color: #000000;
-	border-bottom: 1px solid green;
+
+	height: 40px;
+/*	background: #555555;*/
+	color: #38FF18;
+	border-bottom: 1px solid #38FF18;
+
 }
 
 
@@ -153,25 +157,22 @@ span.glyphicon.glyphicon-home {
 	margin-left: 5px;
 }
 
+.dash-header {
+	border: 0;
+}
+
 #profile-button {
 	background: #000000;
 	/*height: 45px;*/
 	text-align: left;
-	padding-top: 7.5px;
+	padding-top: 10px;
 	padding-left: 10px;
 	color: #9d9d9d;
+	border: 1px solid #9d9d9d;
 
 
 }
 
-#to-home-right {
-	background: #000000;
-	/*height: 45px;*/
-	padding-top: 10px;
-	padding-right: 7.5px;
-	text-align: right;
-	color: #9d9d9d;
-}
 
 /*///////////////////////////////////////////////////
 DATE AND TIME
@@ -180,7 +181,7 @@ DATE AND TIME
 #date-time-bar {
 	/*height: 100px;*/
 	background: #000000;
-	border: 2px solid purple;
+	margin-top: 15px;
 
 }
 
@@ -207,6 +208,25 @@ DATE AND TIME
 	font-size: 3.4em;
 	font-weight: 700;
 	line-height: 110%;
+
+}
+
+.actual-time,
+.meridian {
+	height: 70px;
+	text-align: left;
+	color: white;
+	font-size: 1em;
+	padding: 0;
+}
+
+.actual-time {
+/*	padding-right: 5%;*/
+}
+
+
+.meridian {
+
 }
 
 /*///////////////////////////////////////////////////

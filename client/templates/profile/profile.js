@@ -11,6 +11,11 @@ Template.profile.events({
     var profile = Meteor.user().profile;
     profile.name = newName;
     Meteor.users.update(Meteor.userId(), {$set: {profile: profile}});
+  },
+  
+  'click button.logout': function(e) {
+    // Meteor.logout();
+    Router.go("/logout")
   }
 })
 
@@ -18,3 +23,9 @@ Template.profile.onRendered(function() {
   Session.set('newAccount', null);
   delete Session.keys.newAccount;
 })
+
+
+
+
+
+
