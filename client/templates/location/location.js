@@ -1,7 +1,8 @@
 var markers = null;
+var location = null;
 
 Template.location.onRendered(function() {
-  var location = this;
+  location = this.data;
   markers = [];
   GoogleMaps.load();
   GoogleMaps.ready('map', function(map) {
@@ -19,9 +20,9 @@ Template.location.onRendered(function() {
         var lng = map.instance.center.lng();
         var position = new google.maps.LatLng(lat, lng);
         marker.setPosition(position);
-        location.data.lat = lat;
-        location.data.lng = lng;
-        Locations.update(location.data._id, {$set: {lat: lat, lng: lng}});
+        console.log(lat, lng);
+        location.lat = lat;
+        location.lng = lng;
       }
     )
   })
@@ -40,5 +41,20 @@ Template.location.helpers({
         zoom: 15
       }
     }
+  }
+})
+
+Template.location.events({
+  'click .cancel': function(e) {
+    Router.go("profile");
+  },
+  'click .save': function(e) {
+    // clear the session lat/lng so that we redetermine the location
+    // when the Dashboard loads up again
+    Session.set('lat', null);
+    Session.set('lng', null);
+    // save the new lat and lng, then go back to the profile
+    Locations.update(location._id, {$set: {lat: location.lat, lng: location.lng}});
+    Router.go("profile");
   }
 })

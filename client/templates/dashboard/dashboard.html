@@ -2,23 +2,15 @@
     <div class="container">
 
 <!-- User profile / home links -->
-  
+
     <div class="row">
       <div class="col-xs-12">
         <div class="row">
           <a href="{{pathFor 'profile'}}">
             <div class="col-xs-4" id="profile-button">
               <span class="glyphicon glyphicon-user"></span>
-               <h1>Welcome, <a href="{{pathFor 'profile'}}">{{user}}</a></h1>
-            </div>
-          </a>
-
-          <div class="col-xs-4 empty"></div>
-
-          <a href="#">
-            <div class="col-xs-4" id="to-home-right">
-              Home button
-              <span class="glyphicon glyphicon-home"></span>
+               <h1><a href="{{pathFor 'profile'}}">SETTINGS</a></h1>
+               <!-- <h1>Welcome, <a href="{{pathFor 'profile'}}">{{user}}</a></h1> -->
             </div>
           </a>
         </div>
@@ -33,9 +25,9 @@
 
 
 <!-- Date and Time -->
-    
+
     {{#with date}}
- 
+
 
       <div class="row">
         <div class="col-sm-4" id="date-time-bar">
@@ -56,11 +48,11 @@
 
 <!-- Current Location -->
 
-  <div class="row">  
+  <div class="row">
     <div class="col-xs-12 label">
       Location
     </div>
-    <a href="#"> 
+    <a href="#">
       <div class="col-xs-12 location-singular">
         {{location}}
       </div>
@@ -70,29 +62,19 @@
 
 <!-- Weather and Forecast -->
 
-  <div class="row">  
-    <div class="col-xs-12 label">
-      Weather
-    </div>
-  </div>
-    
-
   {{#with weather}}
-    {{#if loadingMsg}} 
+    {{#if loadingMsg}}
       <p>{{loadingMsg}}</p>
     {{else}}
-  
       <div class="row">
-        
         <div class="col-sm-4"  id="temp-bar">
           <div class="row">
-            
             <div class="col-xs-6" id="hi-temp">
               <div class="row">
                 <div class="col-xs-12 status g">
                   Currently
                 </div>
-                <div class="col-xs-12 status-temp-lo">
+                <div class="col-xs-12 status-temp lo">
                   {{temp}}&deg;
                 </div>
                 <div class="col-xs-12 status">
@@ -100,62 +82,33 @@
                 </div>
               </div>
             </div> <!-- end of hi-temp -->
-          
-
             <div class="col-xs-6" id="lo-temp">
               <div class="row">
                 <div class="col-xs-12 status g">
                   High at 5pm
                 </div>
-                <div class="col-xs-12 status-temp-hi">
-                  68&deg;
+                <div class="col-xs-12 status-temp hi">
+                  {{high}}&deg;
                 </div>
                 <div class="col-xs-12 status">
-                  Clear
+                  {{next24Hours}}
                 </div>
               </div>
             </div><!-- end of lo-temp -->
-          
           </div><!-- end of nested row -->
         </div><!-- end of temp-bar -->
-
       </div><!-- end of row -->
-
     {{/if}}
   {{/with}}
 
-
-
-
-
-
 <!-- Transit lines and arrival times -->
-  <div class="row">  
-    <div class="col-xs-12 label">
-      Transit Lines
-    </div>
-  </div>
-
-
   {{#each stops}}
-
     {{> stop}}
-  
   {{/each}}
 
-
-    <div class="row">
-      <div class="col-xs-12 refresh">
-        <span class="glyphicon glyphicon-refresh"></span>
-         Updated every 30 seconds
-      </div>
-    </div>
-    
     <div class="row">
       <div class="col-xs-12 exit">
-        <button class="logout">
-          LOG OUT
-        </button>
+        <button class="logout">LOG OUT</button>
       </div>
     </div>
   </div>
