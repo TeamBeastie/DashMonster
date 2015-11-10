@@ -10,7 +10,7 @@ Template.location.onRendered(function() {
     var marker = new google.maps.Marker({
       position: map.options.center,
       map: map.instance
-    })
+    });
     markers.push(marker);
     google.maps.event.addListener(
       map.instance, 'center_changed', function() {
@@ -22,7 +22,12 @@ Template.location.onRendered(function() {
         location.lat = lat;
         location.lng = lng;
       }
-    )
+    );
+    // this line is a hack because jumping back and forth between
+    // the settings page and a location page doesn't always refresh
+    // the Google Map how we want. For some reason the center is not
+    // set properly upon map creation so we force the center to be set
+    map.instance.panTo({lat: location.lat, lng:location.lng});
   })
 })
 
