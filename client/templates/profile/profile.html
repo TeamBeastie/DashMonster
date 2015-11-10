@@ -1,15 +1,39 @@
 <template name="profile">
-  <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
-  	<div class="row">
-  		<div class="col-xs-12 profile-header">
-  			EDIT YOUR PROFILE
-  		</div>
-  	</div>
+<div class="container">
+<div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
+
+
     <div class="row">
-      <div class="col-xs-12 label">
-        Display Name
+      <div class="col-xs-12 dash-header">
+        <div class="row">
+          <a href="{{pathFor 'profile'}}">
+            <div class="col-xs-4" id="profile-button">
+              <h4>
+                <span class="glyphicon glyphicon-user"></span>
+
+                 <a href="{{pathFor 'profile'}}">{{username}}'s Profile</a>
+              </h4>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
+
+
+	<div class="row">
+		<div class="col-xs-12 profile-header">
+			EDIT YOUR PROFILE
+		</div>
+	</div>
+
+
+
+
+  <div class="row">
+    <div class="col-xs-12 label">
+      Display Name
+    </div>
+  </div>
 
 
 <form class='name-change'>
@@ -28,15 +52,25 @@
     </div>
   </div>
 
+<div class="row">
+<ul class="locations-list">
+
 <ul class="locations-list">
 {{#each locations}}
+      <div class="col-xs-12 location-singular">
+
 	<li>
 		<a href="{{pathFor 'location'}}">
-			<div class="col-xs-12 location-singular">{{name}} ></div>
-		</a>
+			<!-- <div class="col-xs-12 location-singular"> -->
+				{{name}} >
+<!-- 			</div>
+ -->		</a>
 	</li>
+  </div>
+
 {{/each}}
 </ul>
+</div>
 
 
 <!-- CHANGE THIS TO A PUSH COLUMN INSTEAD OF INSERTING AN EMPTY ONE -->
@@ -48,31 +82,14 @@
 			</button>
 		</div>
 	</div>
-
-
-  <div class="row">
-    <div class="col-xs-12 label">
-      Your Reminders
-    </div>
-  </div>
-  <ul class="reminders-list">
-  {{#each reminders}}
-    <li>
-      <a href="{{pathFor 'reminder'}}">
-        <div class="col-xs-12 location-singular">{{name}} ></div>
-      </a>
-    </li>
-  {{/each}}
-  </ul>
-
-    <div class="row">
-      <div class="col-xs-6 view-link"></div>
-      <div class="col-xs-6 view-link">
-        <button class="add-location">
-          ADD NEW REMINDER<span class="glyphicon glyphicon-plus-sign"></span>
-        </button>
-      </div>
-    </div>
+<!-- 			<a href="{{pathFor 'locations'}}"> -->
+				<div class="col-xs-6 view-link">
+					<button class="add-location">
+						<span class="btn-text">ADD NEW LOCATION</span><span class="glyphicon glyphicon-globe"></span>
+					</button>
+				</div>
+<!-- 			</a> -->
+			</div>
 
 	<div class="row">
 		<a href="{{pathFor 'dashboard'}}"><div class="col-xs-12 to-dashboard">GO TO YOUR DASHBOARD</div></a>
@@ -87,7 +104,6 @@
   </div>
 
 </div>
-
-
+</div>
 
 </template>

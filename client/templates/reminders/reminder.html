@@ -1,0 +1,106 @@
+<template name="reminder">
+<body>
+
+<!-- Carousel slider -->
+<div class="row">
+	<div class="col-xs-12 reminder-bar">
+
+		<div class="carousel slide" id="myCarousel">
+			<div class="carousel-inner">
+				<div class="item active">
+		  			<div class="col-xs-12 carousel-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">DON'T FORGET HOMEWORK</span>
+						</div>
+				</div>
+
+				<div class="item">
+		  			<div class="col-xs-12 carousel-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">FEED THE CAT</span>
+						</div>
+				</div>
+
+				<div class="item">
+		  			<div class="col-xs-12 carousel-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">MEET YOUR FRIEND</span>
+						</div>
+				</div>
+			
+
+			<a class=" left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control right" href="#myCarousel" data-slide="next">
+				<span class="icon-next"></span>
+			</a>
+		</div>
+		</div>	
+		</div>
+</div>
+
+
+<!-- DROPDOWN MENU - DOES NOT WORK WELL -->
+<!-- <div class="row">
+	<div class="col-xs-12 reminder-bar">
+		<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle reminder-btn" type="button" data-toggle="dropdown">
+		(# of) reminders<span class="caret"></span>
+		</button>
+			<ul class="dropdown-menu">
+				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
+				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
+				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
+			</ul>
+		</div>
+	</div>
+</div> -->
+
+<!-- DROPDOWN NAVBAR -->
+
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">(# of ) REMINDERS</a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				</div>
+				
+				<div class="container-fluid">
+				<div class="collapse navbar-collapse navHeaderCollapse">
+				<div class="row reminder-row">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<div class="col-xs-12 dropdown-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">DON'T FORGET HOMEWORK</span>
+							</div>
+						</li>
+						<li>
+							<div class="col-xs-12 dropdown-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">FEED THE DOG</span>
+							</div>
+						</li>	
+						<li>
+							<div class="col-xs-12 dropdown-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">MEET YOUR FRIEND</span>
+							</div>
+						</li>						
+					</ul>
+				</div>
+				</div>
+				</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</template>

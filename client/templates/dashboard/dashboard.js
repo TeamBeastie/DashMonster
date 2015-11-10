@@ -63,7 +63,7 @@ Template.dashboard.helpers({
     var date = {};
     var now = Session.get("now");
     date.day = moment(now).format("dddd, MMMM Do YYYY")
-    date.time = moment(now).format("h:mm:ss")
+    date.time = moment(now).format("h:mm:ss A")
     date.meridian = moment(now).format("A")
     return date;
   },
@@ -100,10 +100,29 @@ Template.dashboard.helpers({
     }
     return weather;
   },
+  precipitation: function() {
+    var precipitation = {loadingMsg: "...Getting Precipitation..."};
+    // var weatherData = Session.get("fakeWeatherData");
+    var weatherData = Session.get("weatherData");
+
+    if (weatherData) {
+      precipitation.loadingMsg = false;
+      weatherData = JSON.parse(weatherData);
+      console.log(weatherData);
+      var points =  weatherData.minutely.data;
+      precipitation.precipArray = points.map(function(obj){
+        return obj.precipIntensity;
+      });
+      console.log(precipitation.precipArray);
+      // precipitation.next24Hours = weatherData.hourly.summary;
+    }
+    return precipitation;
+  },
   testHelper: function() {
     return "test works!";
   },
   stops: function() {
     return Session.get('stops');
   }
+
 });

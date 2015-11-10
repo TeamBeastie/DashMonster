@@ -1,15 +1,14 @@
-div.col-xs-12.profile-header{
+.col-xs-12.profile-header{
 	background: #000000;
 	color: #38FF18;
 	border: 0;
 	padding-top: 6px;
-	font-weight: 300;
-	font-size: 1.7em;
-/*	margin-top: -20px;*/
+	padding-bottom: 6px;
+	font-weight: 700;
+	font-size: 1.65em;
 }
 
-div.col-xs-12.profile-form {
-	height: 80px;
+.col-xs-12.profile-form {
 	text-align: left;
 	border: 0;
 
@@ -20,25 +19,22 @@ div.col-xs-12.profile-form {
 }
 
 .name-input {
-	height: 40px;
 	background: #000;
 	width: 100%;
-	font-size: 1.3em;
-	padding-left: 5px;
+	font-size: 1.65em;
+	padding: 6px;
 	margin-right: 15px;
+	margin-left: 0;
 	border: 0;
 }
 
 .name-button {
 	background: blue;
-	height: 40px;
 	text-align: center;
-	padding-top: 3px;
 
 }
 
 .name.submit-button {
-	height: 35px;
 	width: 110%;
 
 
@@ -46,8 +42,7 @@ div.col-xs-12.profile-form {
 
 
 
-div.col-xs-12.input {
-	height: 40px;
+.col-xs-12.input {
 	text-align: left;
 	padding-top: 3px;
 	padding-left: 5px;
@@ -59,12 +54,11 @@ div.col-xs-12.input {
 
 }
 
-div.col-xs-12.location {
-	height: 40px;
+.col-xs-12.location {
+	background: #000000;
 	text-align: left;
 	padding-top: 3px;
 	padding-left: 5px;
-	background: #000000;
 	border-left: 0;
 	border-right: 0;
 	font-weight: 300;
@@ -73,12 +67,20 @@ div.col-xs-12.location {
 
 }
 
+
+
 ul.locations-list {
-	padding: 0;
-	margin: 0;
+	color: #FFF;
+	list-style: none;
+	padding-left: 0;
 }
 
-div.col-xs-12.input input {
+.locations-list a {
+	color: #FFF;
+}
+
+
+.col-xs-12.input input {
 	background: #000000;
 	border: 0;
 	font-weight: 300;
@@ -90,33 +92,43 @@ div.col-xs-12.input input {
 }
 
 
-div.col-xs-6.view-link {
+.view-link {
 	background: #000000;
 	text-align: right;
-	font-weight: 300;
-	padding-top: 12px;
+	padding-top: 4px;
 	color: #38FF18;
 	margin-right: 0;
 	border: 0;
 
 }
 
-div.col-xs-6.view-link.left {
+/*.text {
+	vertical-align: middle;
+}*/
+
+/*.col-xs-6.view-link.left {
 	text-align: left;
 	padding-top: 0;
 	padding-top: 2px;
 	padding-bottom: 5px;
-}
+}*/
 
-button.add-location {
+.add-location {
 	background: #000;
-	height: 40px;
-	margin-top: -7px;
-/*	margin-bottom: 40px;*/
+	font-size: 1.3em;
+	padding-top: 10px;
 	border: 0;
 }
 
+.add-location:hover,
+.add-location:hover span {
+	color: #FFF;
+}
 
+.btn-text {
+	color: #38FF18;
+	vertical-align: 2px;
+}
 
 
 
@@ -125,24 +137,26 @@ span.glyphicon.glyphicon-globe,
 span.glyphicon.glyphicon-road {
 	color: #38FF18;
 	margin-left: 8px;
-	padding-bottom: 2px;
+	/*	padding-bottom: 2px;*/
 	font-size: 1.1em;
 }
 
-div.col-xs-12.to-dashboard {
+.col-xs-12.to-dashboard {
 	background: #38FF18;
 	color: #000000;
-	font-size: 1.55em;
-	font-weight: 400;
+	font-size: 1.65em;
+	font-weight: bold;
 	padding-top: 5.25px;
-	margin-top: 25px;
+	padding-bottom: 5px;
+	margin-top: 40px;
 	margin-bottom: 50px;
 
 }
 
-div.col-xs-12.to-dashboard:hover {
+.col-xs-12.to-dashboard:hover {
 	color: #FFF;
 }
+
 
 
 
