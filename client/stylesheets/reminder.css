@@ -132,7 +132,9 @@ NAVBAR DROPDOWN FOR REMINDERS
     }
     .navbar-nav {
         float: none!important;
-        margin-top: 7.5px;
+/*        margin-top: 7.5px;*/
+        margin-top: 0;
+        margin-bottom: 0;
     }
     .navbar-nav ul {
     	list-style: none;
