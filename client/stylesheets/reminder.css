@@ -1,0 +1,152 @@
+.container-fluid {
+    padding: 0;
+}
+
+.reminder-bar {
+	background: #FF0018;
+/*	color: white;*/
+	font-size: 1.3em;
+/*	margin-bottom: 5px;*/
+}
+
+.reminder-bar a {
+	color: #FFF;
+}
+
+
+
+
+/*.dropdown button {
+	width: 100%;
+	background: #FF0018;
+	font-size: 1.3em;
+	border-radius: 0;
+
+}
+
+.dropdown.open {
+	background: #FF0018;
+}
+
+
+.dropdown button:hover {
+	background: #FF0018;
+	color: #000;
+}
+
+.caret {
+	margin-left: 20px;
+}*/
+
+.reminder-list {
+    color: #FFF;
+    list-style: none;
+    padding-left: 0;
+}
+
+.carousel-reminder-entry {
+	font-size: 1.1em;
+	background: #FF0018;
+	border: 0;
+}
+
+.carousel-reminder-entry span {
+	padding-bottom: 3px;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+	background-image: none;
+}
+
+.carousel-control.right a,
+.carousel-control.left a {
+	color: #FFF;
+}
+
+
+
+/*//////////////////////////////////////
+NAVBAR DROPDOWN FOR REMINDERS
+//////////////////////////////////////*/
+
+.nav.navbar-nav.navbar-right {
+	list-style: none;
+	text-indent: 0;
+    padding: 0;
+    margin-right: 0;
+}
+
+.collapse.in {
+
+}
+.reminder-row {
+    background: #FF0018;
+    border: 0;
+}
+
+.dropdown-reminder-entry {
+	font-size: 1.5em;
+    color: #FFF;
+	background: #FF0018;
+	border: 0;
+	border-bottom: 1px solid #999999;
+}
+.remove-reminder {
+	background: #FF0018;
+	padding-top: 4px;
+	border: 0;
+
+}
+
+.glyphicon-remove-circle {
+	color: #FFF;
+}
+
+.r {
+    color: #FFF;
+    vertical-align: 2px;
+}
+
+@media (max-width: 2000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        background: #FF0018;
+    	border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav ul {
+    	list-style: none;
+    }
+
+    .navbar-nav>li {
+        float: none;
+        list-style: none;
+    }
+    .navbar-nav>li>a {
+/*        padding-top: 10px;*/
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}

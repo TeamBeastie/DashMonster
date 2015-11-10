@@ -7,7 +7,7 @@
 
 
 body,
-div.container {
+.container {
 	font-family: 'Open Sans Condensed', sans-serif;
 	/*font-family: 'Oswald', sans-serif;*/
 	background: #000000;
@@ -33,16 +33,16 @@ a:hover {
 }
 
 
-div.col-xs-12.label {
-	height: 25px;
+.label {
 	background: #000000;
 	border: 0;
 	text-align: left;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	font-weight: 300;
 	color: #5767CC;
 	padding: 0;
-	padding-top: 2.5px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 	padding-left: 5px;
 	margin-top: 12px;
 	border-bottom: solid 1px #999999;
@@ -52,51 +52,52 @@ div.col-xs-12.label {
 }
 
 .col-xs-6 {
-	/*height: 50px;*/
 	color: #000000;
 	padding-left: 15px;
 }
 
 
 .col-xs-4 {
-	/*height: 45px;*/
 	color: #000000;
-	padding: 15px;
-	padding-bottom: 0;
 }
 
 .col-xs-4.empty{
 	background: #000000;
-	/*height: 45px;*/
 
 }
 
 .col-xs-8 {
-	/*height: 40px;*/
 	color: yellow;
 	background-color: blue;
 
 }
 
 
-div.col-xs-12.exit {
+.col-xs-12.exit {
 	background: #000000;
 	color: #FF0018;
 	font-size: 1.55em;
-	font-weight: 300;
-	padding-top: 4px;
-	border-left: 0;
-	border-right: 0;
-	margin-top: 5px;
+/*	border-left: 0;
+	border-right: 0;*/
+	border: 0;
+	margin-top: 15px;
 	margin-bottom: 20px;
 
 }
 
-div.col-xs-12.exit button {
+.exit button {
 	background: #000000;
+/*		color: #FF0018;
+		font-size: 1.55em;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
 	padding-right: 75px;
 	padding-left: 75px;
 	border: 0;
+}
+
+.exit button:hover {
+	color: #FF880B;	
 }
 
 /*.container {
@@ -109,16 +110,16 @@ div.col-xs-12.exit button {
 
 }*/
 
-.col-xs-12.header {
-	/*height: 50px;*/
+/*.col-xs-12.header {
+	height: 50px;
 	text-align: center;
-}
+}*/
 
-div.col-xs-12.location-singular,
-div.col-xs-4.edit,
-div.col-xs-6.edit
+.location-singular/*,
+.col-xs-4.edit,
+.col-xs-6.edit*/
  {
-	/*height: 40px;*/
+
 	text-align: left;
 	padding-top: 5px;
 	padding-left: 5px;
@@ -127,19 +128,21 @@ div.col-xs-6.edit
 	border-left: 0;
 	border-right: 0;
 	font-weight: 300;
-	font-size: 1.45em;
+	font-size: 1.7em;
 	border-top: 0;
 	border-bottom: 1px solid #999999;
 }
 
-div.col-xs-12.location-singular:hover{
-
-	height: 40px;
-/*	background: #555555;*/
+.location-singular:hover{
 	color: #38FF18;
 	border-bottom: 1px solid #38FF18;
 
 }
+
+.location-singular a:hover{
+	color: #38FF18;
+}
+
 
 
 
@@ -149,12 +152,8 @@ DASHBOARD HEADER LINKS
 ////////////////////////////////////////////////////*/
 
 
-span.glyphicon.glyphicon-user {
+.glyphicon.glyphicon-user {
 	margin-right: 5px;
-}
-
-span.glyphicon.glyphicon-home {
-	margin-left: 5px;
 }
 
 .dash-header {
@@ -163,12 +162,10 @@ span.glyphicon.glyphicon-home {
 
 #profile-button {
 	background: #000000;
-	/*height: 45px;*/
 	text-align: left;
-	padding-top: 10px;
 	padding-left: 10px;
 	color: #9d9d9d;
-	border: 1px solid #9d9d9d;
+/*	border: 1px solid #9d9d9d;*/
 
 
 }
@@ -179,89 +176,76 @@ DATE AND TIME
 ////////////////////////////////////////////////////*/
 
 #date-time-bar {
-	/*height: 100px;*/
-	background: #000000;
-	margin-top: 15px;
 
+	background: #000000;
+	text-align: center;
+	border: 0;
 }
 
 #date {
-	/*height: 45px;*/
+
 	background: #000000;
-	/*height: 20px;*/
 	color: white;
-	/*padding-top: 4px;*/
-	/*padding-bottom: 2px;*/
-	text-align: center;
 	font-weight: 300;
-	/*margin-bottom: 2px;*/
+	padding-top: 8px;
+	font-size: 1.1em;
 }
 
 
 #clock {
-	/*height: 55px;*/
 	background: #000000;
 	color: white;
 	text-align: center;
-	/*padding-top: 3.5px;*/
 	font-family: 'Open Sans Condensed';
 	font-size: 3.4em;
 	font-weight: 700;
 	line-height: 110%;
+	padding-top: 3px;
+	padding-bottom: 10px;
 
 }
 
-.actual-time,
-.meridian {
-	height: 70px;
-	text-align: left;
+.actual-time {
+
 	color: white;
 	font-size: 1em;
 	padding: 0;
 }
 
-.actual-time {
-/*	padding-right: 5%;*/
-}
-
-
-.meridian {
-
-}
 
 /*///////////////////////////////////////////////////
 TEMPERATURE AND FORECAST
 ////////////////////////////////////////////////////*/
 
 #temp-bar {
-	/*height: 105px;*/
 	background: #000000;
+	border-top: 0;
 	border-bottom: 1px solid #999999;
 	margin-bottom: 5px;
 
 }
 
-div .col-xs-12.status {
-	/*height: 25px;*/
+ .col-xs-12.status {
 	background: #000000;
 	padding-top: 4px;
 	font-weight: 300;
 	border: 0;
+	padding-bottom: 5px;
 
 }
 
-div .col-xs-12.status.g {
+ .col-xs-12.status.g {
 	color: #9d9d9d;
+	padding-bottom: 0;
 }
 
 
-div .col-xs-12.status-temp {
-	/*height: 50px;*/
+ .col-xs-12.status-temp {
 	background: #000000;
 	font-weight: 700;
 	font-size: 3.5em;
 	line-height: 110%;
-	/*padding-top: 2px;*/
+	padding-top: 2px;
 	padding-right: 2px;
 	border: 0;
 }
@@ -274,7 +258,13 @@ div .col-xs-12.status-temp {
 	color: #38FF18;
 }
 
-div.col-xs-12.refresh {
+
+.precip {
+
+}
+
+
+.col-xs-12.refresh {
 	padding-top: 10px;
 	font-weight: 300;
 	border: 0;
@@ -282,6 +272,40 @@ div.col-xs-12.refresh {
 	margin-top: 10px;
 }
 
-span.glyphicon.glyphicon-refresh {
+.glyphicon.glyphicon-refresh {
 	margin-right: 5px;
 }
+
+#viz-wrapperP {
+	background: #DDD;
+	padding: 20px;
+}
+
+#viz-wrapperP svg {
+	padding-bottom: 10px;
+}
+
+/* EXPERIMENTAL SVG GRAPH STYLES */
+
+       path {
+         stroke: steelblue;
+         stroke-width: 1;
+         fill: none;
+       }
+      
+       .axis {
+         shape-rendering: crispEdges;
+       }
+       .x.axis line {
+         stroke: lightgrey;
+       }
+       .x.axis .minor {
+         stroke-opacity: .5;
+       }
+       .x.axis path {
+         display: none;
+       }
+       .y.axis line, .y.axis path {
+         fill: none;
+         stroke: #000;
+       }

@@ -1,22 +1,23 @@
 <template name="profile">
-    <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
+<div class="container">
+<div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
+
+
     <div class="row">
       <div class="col-xs-12 dash-header">
         <div class="row">
           <a href="{{pathFor 'profile'}}">
-            <div class="col-xs-8" id="profile-button">
-              <span class="glyphicon glyphicon-user"></span>
-              	{{username}}'s Profile
+            <div class="col-xs-4" id="profile-button">
+              <h4>
+                <span class="glyphicon glyphicon-user"></span>
+
+                 <a href="{{pathFor 'profile'}}">{{username}}'s Profile</a>
+              </h4>
             </div>
           </a>
-
-          <div class="col-xs-4 empty"></div>
-
         </div>
       </div>
     </div>
-
-
 
 
 	<div class="row">
@@ -53,20 +54,25 @@
       Your Locations
     </div>
   </div>
+
+<div class="row">
 <ul class="locations-list">
 
 {{#each locations}}
+      <div class="col-xs-12 location-singular">
 
 	<li>
 		<a href="{{pathFor 'location'}}">
-			<div class="col-xs-12 location-singular">
+			<!-- <div class="col-xs-12 location-singular"> -->
 				{{name}} >
-			</div>
-		</a>
+<!-- 			</div>
+ -->		</a>
 	</li>
+  </div>
 
 {{/each}}
 </ul>
+</div>
 
 
 <!-- CHANGE THIS TO A PUSH COLUMN INSTEAD OF INSERTING AN EMPTY ONE -->
@@ -76,7 +82,7 @@
 <!-- 			<a href="{{pathFor 'locations'}}"> -->
 				<div class="col-xs-6 view-link">
 					<button class="add-location">
-						ADD NEW LOCATION<span class="glyphicon glyphicon-globe"></span>
+						<span class="btn-text">ADD NEW LOCATION</span><span class="glyphicon glyphicon-globe"></span>
 					</button>
 				</div>
 <!-- 			</a> -->
@@ -98,7 +104,6 @@
 <h2>Reminders</h2>
 <button class="add-reminder">Add New Reminder</button>
 </div>
-
-
+</div>
 
 </template>

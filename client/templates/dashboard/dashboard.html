@@ -1,17 +1,18 @@
 <template name="dashboard">
     <div class="container">
     <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
-<!-- User profile / home links -->
+
 
     <div class="row">
       <div class="col-xs-12 dash-header">
         <div class="row">
           <a href="{{pathFor 'profile'}}">
-            <div class="col-xs-8" id="profile-button">
-              <span class="glyphicon glyphicon-user"></span>
+            <div class="col-xs-4" id="profile-button">
+              <h4>
+                <span class="glyphicon glyphicon-user"></span>
 
-               <h1><a href="{{pathFor 'profile'}}">SETTINGS</a></h1>
-               <!-- <h1>Welcome, <a href="{{pathFor 'profile'}}">{{user}}</a></h1> -->
+                 <a href="{{pathFor 'profile'}}">SETTINGS</a>
+              </h4>
             </div>
           </a>
         </div>
@@ -21,7 +22,7 @@
 <!-- Reminders Bar -->
 
 <!-- {{#each reminders}} -->
-    <!-- {{>reminder}} -->
+    {{>reminder}}
 <!-- {{/each reminders}} -->
 
 
@@ -40,11 +41,8 @@
             
 
             <div class="row">
-            <div class="col-xs-4 col-xs-push-4 actual-time">
-              {{time}} 
-            </div>
-            <div class="col-xs-4 col-xs-push-4 meridian">
-              {{meridian}}
+            <div class="col-xs-6 col-xs-push-3 actual-time">
+              {{time}}
             </div>
             </div>
             </div>
@@ -117,6 +115,36 @@
     {{/if}}
   {{/with}}
 
+
+<div class="row">
+<div class="col-xs-12 precip">
+{{#with precipitation}}
+  {{#if loadingMsg}}
+    <p>{{loadingMsg}}</p>
+  {{else}}
+
+    <div id="viz-wrapperP">
+      
+    </div> 
+
+
+
+    {{#each precipArray}}
+
+      <span>{{this}}, </span>
+
+    {{/each}}
+
+
+
+
+  {{/if}}
+
+
+{{/with}}
+</div>
+</div>
+
 <!-- Transit lines and arrival times -->
   {{#each stops}}
     {{> stop}}
@@ -129,4 +157,121 @@
     </div>
   </div>
   </div>
+
+  <script type="text/javascript">
+   
+    // <style>
+    //   /* tell the SVG path to be a thin blue line without any area fill */
+    //   path {
+    //     stroke: steelblue;
+    //     stroke-width: 1;
+    //     fill: none;
+    //   }
+      
+    //   .axis {
+    //     shape-rendering: crispEdges;
+    //   }
+    //   .x.axis line {
+    //     stroke: lightgrey;
+    //   }
+    //   .x.axis .minor {
+    //     stroke-opacity: .5;
+    //   }
+    //   .x.axis path {
+    //     display: none;
+    //   }
+    //   .y.axis line, .y.axis path {
+    //     fill: none;
+    //     stroke: #000;
+    //   }
+    // </style>
+
+
+  // <div id="graph" class="aGraph" style="position:absolute;top:0px;left:0; float:left;"></div>
+
+
+   /* implementation heavily influenced by http://bl.ocks.org/1166403 */
+    
+    // define dimensions of graph
+    var m = [10, 10, 10, 10]; // margins
+    var w = 500 - m[1] - m[3]; // width
+    var h = 100 - m[0] - m[2]; // height
+    
+    // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
+    var data = [3, 6, 2, 7, 5, 2, 0, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 3, 6, 2, 7, 5, 2, 0, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7];
+    
+    // X scale will fit all values from data[] within pixels 0-w
+    var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
+    
+    // Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
+    var y = d3.scale.linear().domain([0, 10]).range([h, 0]);
+      // automatically determining max range can work something like this
+      // var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
+    
+    // create a line function that can convert data[] into x and y points
+    var line = d3.svg.line()
+      // assign the X function to plot our line as we wish
+      .x(function(d,i) { 
+        // verbose logging to show what's actually being done
+        console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+        // return the X coordinate where we want to plot this datapoint
+        return x(i); 
+      })
+      .y(function(d) { 
+        // verbose logging to show what's actually being done
+        console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
+        // return the Y coordinate where we want to plot this datapoint
+        return y(d); 
+      })
+      // Add an SVG element with the desired dimensions and margin.
+      var graph = d3.select("#viz-wrapperP").append("svg:svg")
+            .attr("width", w + m[1] + m[3])
+            .attr("height", h + m[0] + m[2])
+          .append("svg:g")
+            .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+      // create yAxis
+      var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+      // Add the x-axis.
+      graph.append("svg:g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + h + ")")
+            .call(xAxis);
+      // create left yAxis
+      var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
+      // Add the y-axis to the left
+      graph.append("svg:g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(-25,0)")
+            .call(yAxisLeft);
+      
+        // Add the line by appending an svg:path element with the data line we created above
+      // do this AFTER the axes above so that the line is above the tick-lines
+        graph.append("svg:path").attr("d", line(data));
+
+
+
+
+
+
+
+
+
+
+  </script>  
+
 </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
