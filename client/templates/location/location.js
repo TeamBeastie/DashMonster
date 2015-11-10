@@ -1,5 +1,5 @@
 var markers = null;
-var location = null;
+var location = null; // this.data
 
 Template.location.onRendered(function() {
   location = this.data;
@@ -12,7 +12,6 @@ Template.location.onRendered(function() {
       map: map.instance
     })
     markers.push(marker);
-    console.log(markers);
     google.maps.event.addListener(
       map.instance, 'center_changed', function() {
         var marker = markers[0];
@@ -20,7 +19,6 @@ Template.location.onRendered(function() {
         var lng = map.instance.center.lng();
         var position = new google.maps.LatLng(lat, lng);
         marker.setPosition(position);
-        console.log(lat, lng);
         location.lat = lat;
         location.lng = lng;
       }
@@ -28,23 +26,29 @@ Template.location.onRendered(function() {
   })
 })
 
-Template.location.onDestroyed(function() {
-  console.log("REMOVED");
-  console.log(this.data);
-})
-
 Template.location.helpers({
   mapOptions: function() {
     if (GoogleMaps.loaded()) {
       return {
-        center: new google.maps.LatLng(this.lat, this.lng),
-        zoom: 15
+        center: new google.maps.LatLng(location.lat, location.lng),
+        zoom: 14,
+        disableDefaultUI: true,
+        zoomControl: true
       }
     }
+  },
+  stops: function() {
+    return Stops.find({locationId: this._id});
   }
 })
 
 Template.location.events({
+  'click .use-current': function(e) {
+    var map = GoogleMaps.maps.map.instance;
+    var lat = Session.get('lat');
+    var lng = Session.get('lng');
+    map.panTo({lat: Number(lat), lng:Number(lng)});
+  },
   'click .cancel': function(e) {
     Router.go("profile");
   },
@@ -56,5 +60,12 @@ Template.location.events({
     // save the new lat and lng, then go back to the profile
     Locations.update(location._id, {$set: {lat: location.lat, lng: location.lng}});
     Router.go("profile");
-  }
+  },
+  'submit .name-change': function(e, t) {
+    e.preventDefault();
+    var $nameField = $(e.target).find('.name-input')
+    var newName = $nameField.val();
+    $nameField.blur();
+    Locations.update(location._id, {$set: {name: newName}});
+  },
 })

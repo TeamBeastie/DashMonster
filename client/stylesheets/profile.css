@@ -15,7 +15,6 @@
 }
 
 .name-change {
-	margin-top: 5px;
 	text-align: left;
 }
 
@@ -26,7 +25,7 @@
 	padding: 6px;
 	margin-right: 15px;
 	margin-left: 0;
-	border: 0;	
+	border: 0;
 }
 
 .name-button {
@@ -52,7 +51,7 @@
 	border-left: 0;
 	border-right: 0;
 	margin-bottom: 20px;
-		
+
 }
 
 .col-xs-12.location {
@@ -65,7 +64,7 @@
 	font-weight: 300;
 	font-size: 1.45em;
 	border-top: 0;
-		
+
 }
 
 
@@ -133,6 +132,7 @@ ul.locations-list {
 
 
 
+span.glyphicon.glyphicon-plus-sign,
 span.glyphicon.glyphicon-globe,
 span.glyphicon.glyphicon-road {
 	color: #38FF18;

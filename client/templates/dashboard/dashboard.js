@@ -126,9 +126,3 @@ Template.dashboard.helpers({
   }
 
 });
-
-Template.dashboard.events({
-  'click button.logout': function(e) {
-    Router.go("/logout")
-  }
-});
