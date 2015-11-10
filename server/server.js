@@ -14,9 +14,27 @@ Meteor.methods({
   },
   // takes a stopId and route, returns entire result of the TriMet API call
   // as JSON text.
-  getArrivals: function(stopId, route) {
+  getArrivals: function(stopId) {
     this.unblock();
     var apiUrl = "https://developer.trimet.org/ws/v2/arrivals/json/true/locIDs/" + stopId + "/arrivals/3/appID/" + API_KEY_TRIMET;
+    var info = HTTP.get(apiUrl);
+    return info.content;
+  },
+  getBusLines: function() {
+    this.unblock();
+    var apiUrl = "https://developer.trimet.org/ws/V1/routeConfig/json/true/appid/" + API_KEY_TRIMET;
+    var info = HTTP.get(apiUrl);
+    return info.content;
+  },
+  getDirectionsForLine: function(route) {
+    this.unblock();
+    var apiUrl = "https://developer.trimet.org/ws/V1/routeConfig/routes/" + route + "/json/true/dir/true/appid/" + API_KEY_TRIMET;
+    var info = HTTP.get(apiUrl);
+    return info.content;
+  },
+  getStops: function(route, direction) {
+    this.unblock();
+    var apiUrl = "https://developer.trimet.org/ws/V1/routeConfig/route/" + route + "/dir/" + direction + "/stops/true/json/true/appid/" + API_KEY_TRIMET;
     var info = HTTP.get(apiUrl);
     return info.content;
   }

@@ -7,12 +7,14 @@ Template.profile.helpers({
 Template.profile.events({
   'submit .name-change': function(e, t) {
     e.preventDefault();
-    var newName = $(e.target).find('.name-input').val();
+    var $nameField = $(e.target).find('.name-input')
+    var newName = $nameField.val();
+    $nameField.blur();
     var profile = Meteor.user().profile;
     profile.name = newName;
     Meteor.users.update(Meteor.userId(), {$set: {profile: profile}});
   },
-  
+
   'click button.logout': function(e) {
     // Meteor.logout();
     Router.go("/logout")

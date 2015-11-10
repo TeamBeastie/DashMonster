@@ -107,9 +107,3 @@ Template.dashboard.helpers({
     return Session.get('stops');
   }
 });
-
-Template.dashboard.events({
-  'click button.logout': function(e) {
-    Router.go("/logout")
-  }
-});

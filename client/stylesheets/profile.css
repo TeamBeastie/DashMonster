@@ -16,7 +16,6 @@ div.col-xs-12.profile-form {
 }
 
 .name-change {
-	margin-top: 5px;
 	text-align: left;
 }
 
@@ -27,7 +26,7 @@ div.col-xs-12.profile-form {
 	font-size: 1.3em;
 	padding-left: 5px;
 	margin-right: 15px;
-	border: 0;	
+	border: 0;
 }
 
 .name-button {
@@ -57,7 +56,7 @@ div.col-xs-12.input {
 	border-left: 0;
 	border-right: 0;
 	margin-bottom: 20px;
-		
+
 }
 
 div.col-xs-12.location {
@@ -71,7 +70,7 @@ div.col-xs-12.location {
 	font-weight: 300;
 	font-size: 1.45em;
 	border-top: 0;
-		
+
 }
 
 ul.locations-list {
@@ -121,6 +120,7 @@ button.add-location {
 
 
 
+span.glyphicon.glyphicon-plus-sign,
 span.glyphicon.glyphicon-globe,
 span.glyphicon.glyphicon-road {
 	color: #38FF18;

@@ -37,11 +37,11 @@
               {{day}}
             </div>
             <div class="col-sm-12" id="clock">
-            
+
 
             <div class="row">
             <div class="col-xs-4 col-xs-push-4 actual-time">
-              {{time}} 
+              {{time}}
             </div>
             <div class="col-xs-4 col-xs-push-4 meridian">
               {{meridian}}
@@ -63,7 +63,7 @@
       Current Location
     </div>
 
-    <a href="{{pathFor 'location'}}"> 
+    <a href="{{pathFor 'location'}}">
 
       <div class="col-xs-12 location-singular">
         {{location}}
@@ -81,7 +81,7 @@
     {{else}}
       <div class="row">
 
-        
+
         <div class="col-xs-12"  id="temp-bar">
 
           <div class="row">
@@ -122,11 +122,6 @@
     {{> stop}}
   {{/each}}
 
-    <div class="row">
-      <div class="col-xs-12 exit">
-        <button class="logout">LOG OUT</button>
-      </div>
-    </div>
   </div>
   </div>
 </template>
