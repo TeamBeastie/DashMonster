@@ -62,7 +62,7 @@
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">(# of ) REMINDERS</a>
+				<a href="#" class="navbar-brand">{{remindersCount}} REMINDERS</a>
 				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -74,7 +74,7 @@
 				<div class="collapse navbar-collapse navHeaderCollapse">
 				<div class="row reminder-row">
 					<ul class="nav navbar-nav navbar-right">
-						<li>
+						<!-- <li>
 							<div class="col-xs-12 dropdown-reminder-entry">
 								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
 								<span class="r">DON'T FORGET HOMEWORK</span>
@@ -91,7 +91,11 @@
 								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
 								<span class="r">MEET YOUR FRIEND</span>
 							</div>
-						</li>						
+						</li>						 -->
+
+						{{#each remindersList}}
+							{{>remindersTemplate}}
+						{{/each}}
 					</ul>
 				</div>
 				</div>
@@ -103,4 +107,15 @@
 
 
 </body>
+</template>
+
+<template name="remindersTemplate">
+
+						<li>
+							<div class="col-xs-12 dropdown-reminder-entry">
+								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+								<span class="r">{{reminderTitle}}</span>
+							</div>
+						</li>	
+
 </template>
