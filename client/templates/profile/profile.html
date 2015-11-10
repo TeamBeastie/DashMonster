@@ -55,18 +55,27 @@
       Your Reminders
     </div>
   </div>
-  <ul class="reminders-list">
-  {{#each reminders}}
+<!--   <ul class="reminders-list">
+  {{#each remindersList}}
     <li>
       <a href="{{pathFor 'reminder'}}">
-        <div class="col-xs-12 location-singular">{{name}} ></div>
+        <div class="col-xs-12 location-singular">{{>reminderTemplate}} ></div>
       </a>
     </li>
   {{/each}}
-  </ul>
+  </ul> -->
 
     <div class="row">
-      <div class="col-xs-6 view-link"></div>
+
+      <div class="col-xs-6">
+        <form class="new-reminder-form">
+        <input type="text" class="reminderField" placeholder="Type new reminder">
+        <input type="submit" value="Submit Your Idea">
+      </form>
+      </div>
+
+
+      
       <div class="col-xs-6 view-link">
         <button class="add-location">
           ADD NEW REMINDER<span class="glyphicon glyphicon-plus-sign"></span>
