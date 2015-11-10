@@ -49,6 +49,31 @@
 		</div>
 	</div>
 
+
+  <div class="row">
+    <div class="col-xs-12 label">
+      Your Reminders
+    </div>
+  </div>
+  <ul class="reminders-list">
+  {{#each reminders}}
+    <li>
+      <a href="{{pathFor 'reminder'}}">
+        <div class="col-xs-12 location-singular">{{name}} ></div>
+      </a>
+    </li>
+  {{/each}}
+  </ul>
+
+    <div class="row">
+      <div class="col-xs-6 view-link"></div>
+      <div class="col-xs-6 view-link">
+        <button class="add-location">
+          ADD NEW REMINDER<span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+      </div>
+    </div>
+
 	<div class="row">
 		<a href="{{pathFor 'dashboard'}}"><div class="col-xs-12 to-dashboard">GO TO YOUR DASHBOARD</div></a>
 	</div>
@@ -61,9 +86,6 @@
     </div>
   </div>
 
-
-<h2>Reminders</h2>
-<button class="add-reminder">Add New Reminder</button>
 </div>
 
 

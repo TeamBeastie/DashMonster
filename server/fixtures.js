@@ -88,20 +88,35 @@ if (Meteor.users.find().count() === 0) {
   var erikHomeStop = Stops.insert({
     userId: erik,
     locationId: erikHome,
+    customDescription: false,
+    lineId: 14,
+    lineDescription: "14-Hawth",
+    directionId: 0,
+    directionDescription: "to Downtown",
     stopId: 2616,
-    line: 14
+    stopDescription: "SE Hawthorne and 30th"
   });
   var erikHomeStop2 = Stops.insert({
     userId: erik,
     locationId: erikHome,
+    customDescription: false,
+    lineId: 15,
+    lineDescription: "15-Bel",
+    directionId: 0,
+    directionDescription: "to NW",
     stopId: 417,
-    line: 15
+    stopDescription: "SE Belmont and 30th"
   });
   var erikSchoolStop = Stops.insert({
     userId: erik,
     locationId: erikSchool,
-    stopId: 13169, // 6th and Main
-    line: 14
+    customDescription: false,
+    lineId: 14,
+    lineDescription: "14-Hawth",
+    directionId: 1,
+    directionDescription: "to the SE",
+    stopId: 13169,
+    stopDescription: "SW Main and 6th"
   });
 };
 /*

@@ -58,7 +58,7 @@ getAllArrivals = function(template) {
         console.log("error", error);
       }
       if (result) {
-        var k = String(e.stopId) + "-" + String(e.line);
+        var k = String(e.stopId) + "-" + String(e.lineId);
         var trimetData = Session.get('trimet');
         trimetData[k] = result;
         Session.set('trimet', trimetData);
