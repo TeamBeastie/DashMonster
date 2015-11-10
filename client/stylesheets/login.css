@@ -1,4 +1,4 @@
-.col-xs-12.header {
+.header {
 	height: 325px;
 	background: #000;
 	text-align: center;
@@ -12,16 +12,15 @@ svg.logo-oval ellipse:hover {
 }
 
 
-div.col-xs-12.login-area {
-	height: 300px;
+.login-area {
 	background: #000;
 	padding-top: 10px;
 	border: 0;
 	
 }
 
-div.col-xs-12.login-area label,
-div.col-xs-12.login-area input.input {
+.login-area label,
+.login-area input.input {
 	display: block;
 	text-align: left;
 	width: 100%;
@@ -30,52 +29,59 @@ div.col-xs-12.login-area input.input {
 	margin-bottom: 10px;
 }
 
-div.col-xs-12.login-area input.input {
-	height: 40px;
+.login-area input.input {
 	background: #000;
 	color: #fff;
-	padding-left: 5px;
+
+		padding: 5px;
+		padding-left: 10px;
 	margin-top: -5px;
 	margin-bottom: 17px;
+	border: 1px solid #999999;
+	border-radius: 5px;
+}
+
+.login-area input:hover {
+	color: #999;
 }
 
 
-.login-button {
+
+.login-button, .exit {
 	background: #000000;
 	color: #38FF18;
 	font-weight: 300;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	margin-top: 5px;
 
-
 }
 
-.login-button input {
-	width: 60%;
+.login-button input,
+.exit input {
+	width: 53%;
 	border: 0;
+
 }
 
-div.col-xs-6.left,
-div.col-xs-6.right {
-	height: 30px;
+.col-xs-6.left,
+.col-xs-6.right {
 	background: #000;
-	margin-top: 10px;
 	color: #999999;
+	font-size: 1.23em;
 	padding-top: 3px;
+	padding-bottom: 3px;
 	margin-top: 15px;
-/*	border:  1px solid #999999;
-*/
 
 }
 
 
-div.col-xs-6.left {
+.col-xs-6.left {
 	text-align: left;
 	padding-left: 0;
 
 }
 
-div.col-xs-6.right {
+.col-xs-6.right {
 	text-align: right;
 	padding-right: 0;
 

@@ -1,20 +1,34 @@
-div.col-xs-12.signup-header {
-	height: 125px;
+.signup-header {
+/*	height: 125px;*/
 	background: #000;
-	color: #555;
+	color: #FFF;
 	border: 0;
-
+	font-size: 1em;
 
 }
 
-.signup-header h6 {
-	font-size: 1.1em;
-	font-style: italic;
+.signup-header h1 {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.signup-header h3 {
+	font-size: 1.4em;
+	padding-bottom: 15px;
+}
+
+.signup-header p {
+	font-size: 1.3em;
+	color: #9d9d9d;
+}
+
+.signup-header a {
+	text-decoration: underline;
 }
 
 .signup {
 	background: #555;
-/*	color: #000;*/
+/*		background: #FFF;*/
 	border-radius: 5px;
 	padding: 10px;
 
@@ -22,17 +36,20 @@ div.col-xs-12.signup-header {
 
 .signup label {
 	color: #FFF;
-/*	font-weight: 400;*/
 }
 
 .signup input {
 	border: 0;
 	border-radius: 5px;
-	padding-left: 15px;
+}
+
+.signup input:hover {
+	color: #FFF;
 }
 
 .create-button {
-	padding-bottom: 5px;
+
+	padding-bottom: 6px;
 	padding-top: 0;
 	margin-top: 15px;
 	border-radius: 5px;
