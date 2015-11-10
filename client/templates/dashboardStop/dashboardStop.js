@@ -1,4 +1,4 @@
-Template.stop.helpers({
+Template.dashboardStop.helpers({
   arrivals: function(stopId, route) {
     var k = String(stopId) + "-" + String(route)
     // fetch the array of ETAs stored on Session.etas[k] and
