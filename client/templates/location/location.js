@@ -1,12 +1,8 @@
 var markers = null;
 var location = null; // this.data
-var stops = null;
 
 Template.location.onRendered(function() {
-  location = this.data.location;
-  stops = this.data.stops;
-  console.log(location);
-  console.log(stops);
+  location = this.data;
   markers = [];
   GoogleMaps.load();
   GoogleMaps.ready('map', function(map) {
@@ -34,12 +30,15 @@ Template.location.helpers({
   mapOptions: function() {
     if (GoogleMaps.loaded()) {
       return {
-        center: new google.maps.LatLng(this.location.lat, this.location.lng),
+        center: new google.maps.LatLng(location.lat, location.lng),
         zoom: 14,
         disableDefaultUI: true,
         zoomControl: true
       }
     }
+  },
+  stops: function() {
+    return Stops.find({locationId: this._id});
   }
 })
 

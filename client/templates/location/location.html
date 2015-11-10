@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-xs-12">
       <form class='name-change'>
-        <input type="text" class="name-input" value="{{location.name}}">
+        <input type="text" class="name-input" value="{{name}}">
       </form>
     </div>
   </div>
@@ -21,10 +21,9 @@
       <button class="cancel btn btn-danger">CANCEL</button><button class="use-current btn btn-info">USE CURRENT LOCATION</button><button class="save btn btn-success">SAVE</button>
     </div>
   </div>
-  <ul>
-    <!-- <li>{{stops}}</li> -->
+  <div class="row">
     {{#each stops}}
-    <li>{{this.line}} - {{this.stopId}}</li>
+      {{> locationStop}}
     {{/each}}
-  </ul>
+  </div>
 </template>

@@ -91,6 +91,12 @@ if (Meteor.users.find().count() === 0) {
     stopId: 2616,
     line: 14
   });
+  var erikHomeStop2 = Stops.insert({
+    userId: erik,
+    locationId: erikHome,
+    stopId: 417,
+    line: 15
+  });
   var erikSchoolStop = Stops.insert({
     userId: erik,
     locationId: erikSchool,
