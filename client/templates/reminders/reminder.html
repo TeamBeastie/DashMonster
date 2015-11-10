@@ -1,5 +1,4 @@
 <template name="reminder">
-<body>
 
 <!-- Carousel slider -->
 <div class="row">
@@ -27,7 +26,7 @@
 								<span class="r">MEET YOUR FRIEND</span>
 						</div>
 				</div>
-			
+
 
 			<a class=" left carousel-control" href="#myCarousel" data-slide="prev">
 				<span class="icon-prev"></span>
@@ -36,29 +35,12 @@
 				<span class="icon-next"></span>
 			</a>
 		</div>
-		</div>	
+		</div>
 		</div>
 </div>
 
-
-<!-- DROPDOWN MENU - DOES NOT WORK WELL -->
-<!-- <div class="row">
-	<div class="col-xs-12 reminder-bar">
-		<div class="dropdown">
-		<button class="btn btn-primary dropdown-toggle reminder-btn" type="button" data-toggle="dropdown">
-		(# of) reminders<span class="caret"></span>
-		</button>
-			<ul class="dropdown-menu">
-				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
-				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
-				<li><div class="col-xs-12 reminder-entry"><span class="glyphicon glyphicon-remove-circle"></span>DON'T FORGET HOMEWORK</div></li>
-			</ul>
-		</div>
-	</div>
-</div> -->
-
 <!-- DROPDOWN NAVBAR -->
-
+{{#if remindersCount}}
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -69,30 +51,11 @@
 					<span class="icon-bar"></span>
 				</button>
 				</div>
-				
+
 				<div class="container-fluid">
 				<div class="collapse navbar-collapse navHeaderCollapse">
 				<div class="row reminder-row">
 					<ul class="nav navbar-nav navbar-right">
-						<!-- <li>
-							<div class="col-xs-12 dropdown-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">DON'T FORGET HOMEWORK</span>
-							</div>
-						</li>
-						<li>
-							<div class="col-xs-12 dropdown-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">FEED THE DOG</span>
-							</div>
-						</li>	
-						<li>
-							<div class="col-xs-12 dropdown-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">MEET YOUR FRIEND</span>
-							</div>
-						</li>						 -->
-
 						{{#each remindersList}}
 							{{>remindersTemplate}}
 						{{/each}}
@@ -102,20 +65,14 @@
 				</div>
 		</div>
 	</div>
-
-
-
-
-</body>
+{{/if}}
 </template>
 
 <template name="remindersTemplate">
-
-						<li>
-							<div class="col-xs-12 dropdown-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">{{reminderTitle}}</span>
-							</div>
-						</li>	
-
+	<li>
+		<div class="col-xs-12 dropdown-reminder-entry">
+			<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+			<span class="r">{{reminderTitle}}</span>
+		</div>
+	</li>
 </template>
