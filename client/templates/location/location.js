@@ -68,7 +68,8 @@ Template.location.events({
   },
   'click .delete-location': function(e) {
     if (window.confirm('Delete "' + this.name + '"?')) {
-      Locations.remove(this._id)
+      Locations.remove(this._id);
+      Router.go("/profile");
     };
   },
   'submit .name-change': function(e, t) {
