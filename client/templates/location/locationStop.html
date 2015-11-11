@@ -1,8 +1,10 @@
 <template name="locationStop">
   <div class="row">
     <div class="col-xs-12">
-      <p><a href="{{pathFor 'stop'}}">{{lineId}}</a></p>
-      <p>{{stopId}}</p>
+    <a href="{{pathFor 'stop'}}"><li>
+      <h1>{{lineDescription}} {{directionDescription}}</h1>
+      <h3>{{stopDescription}}</h3>
+    </li></a>
     </div>
   </div>
 </template>

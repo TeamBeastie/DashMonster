@@ -29,8 +29,6 @@
 <!-- Date and Time -->
 
     {{#with date}}
-
-
       <div class="row">
         <div class="col-xs-12" id="date-time-bar">
           <div class="row">
@@ -43,8 +41,6 @@
           </div>
         </div>
       </div>
-
-
     {{/with}}
 
 
@@ -116,37 +112,22 @@
   {{#if loadingMsg}}
     <p>{{loadingMsg}}</p>
   {{else}}
-
-    <div id="viz-wrapperP">
-
-    </div>
-
-
-
-    {{#each precipArray}}
-
-      <span>{{this}}, </span>
-
-    {{/each}}
-
-
-
-
+    <!-- <div id="viz-wrapperP"></div> -->
+    <!-- {{#each precipArray}} -->
+      <!-- <span>{{this}}, </span> -->
+    <!-- {{/each}} -->
   {{/if}}
-
-
 {{/with}}
 </div>
 </div>
 
+</div>
+</div>
+
 <!-- Transit lines and arrival times -->
-  {{#each stops}}
-    {{> dashboardStop}}
-  {{/each}}
-
-  </div>
-  </div>
-
+{{#each stops}}
+  {{> dashboardStop}}
+{{/each}}
   <script type="text/javascript">
 
     // <style>
@@ -236,31 +217,5 @@
         // Add the line by appending an svg:path element with the data line we created above
       // do this AFTER the axes above so that the line is above the tick-lines
         graph.append("svg:path").attr("d", line(data));
-
-
-
-
-
-
-
-
-
-
   </script>
-
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

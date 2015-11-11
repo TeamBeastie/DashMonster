@@ -66,6 +66,11 @@ Template.location.events({
     Locations.update(location._id, {$set: {lat: location.lat, lng: location.lng}});
     Router.go("profile");
   },
+  'click .delete-location': function(e) {
+    if (window.confirm('Delete "' + this.name + '"?')) {
+      Locations.remove(this._id)
+    };
+  },
   'submit .name-change': function(e, t) {
     e.preventDefault();
     var $nameField = $(e.target).find('.name-input')
@@ -73,4 +78,7 @@ Template.location.events({
     $nameField.blur();
     Locations.update(location._id, {$set: {name: newName}});
   },
+  'click .add-location': function(e) {
+    console.log(e);
+  }
 })

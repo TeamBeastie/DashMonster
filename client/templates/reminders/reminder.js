@@ -13,7 +13,7 @@ Template.reminder.helpers({
 
 Template.remindersTemplate.events({
 	'click button.remove-reminder': function(){
-		result = window.confirm('Delete "' + this.reminderTitle + '"?');
+		var result = window.confirm('Delete "' + this.reminderTitle + '"?');
 
 		if (result){
 		Reminders.remove(this._id);
