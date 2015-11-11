@@ -1,32 +1,22 @@
 <template name="reminder">
 
 <!-- Carousel slider -->
+<!-- {{#if remindersCount}}
 <div class="row">
-	<div class="col-xs-12 reminder-bar">
+	<div class="carousel slide" id="myCarousel">
+		<div class="carousel-inner">
+			{{#each remindersList}}
+			<div class="item">
 
-		<div class="carousel slide" id="myCarousel">
-			<div class="carousel-inner">
-				<div class="item active">
-		  			<div class="col-xs-12 carousel-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">DON'T FORGET HOMEWORK</span>
-						</div>
-				</div>
+						{{>remindersTemplate}}
 
-				<div class="item">
-		  			<div class="col-xs-12 carousel-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">FEED THE CAT</span>
-						</div>
-				</div>
-
-				<div class="item">
-		  			<div class="col-xs-12 carousel-reminder-entry">
-								<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
-								<span class="r">MEET YOUR FRIEND</span>
-						</div>
-				</div>
-
+			</div>
+			{{/each}}
+			<div class="item active">
+	  			<div class="col-xs-12 dropdown-reminder-entry rem-car-header">
+								<span class="r">{{remindersCount}} REMINDERS</span>
+					</div>
+			</div>
 
 			<a class=" left carousel-control" href="#myCarousel" data-slide="prev">
 				<span class="icon-prev"></span>
@@ -35,44 +25,54 @@
 				<span class="icon-next"></span>
 			</a>
 		</div>
-		</div>
-		</div>
+	</div>
 </div>
+{{/if}} -->
+
 
 <!-- DROPDOWN NAVBAR -->
 {{#if remindersCount}}
 	<div class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
+		<div class="row">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">{{remindersCount}} REMINDERS</a>
+				<span class="navbar-brand">{{remindersCount}} REMINDERS</span>
 				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				</div>
+			</div>
+		</div>
 
 				<div class="container-fluid">
 				<div class="collapse navbar-collapse navHeaderCollapse">
 				<div class="row reminder-row">
 					<ul class="nav navbar-nav navbar-right">
 						{{#each remindersList}}
-							{{>remindersTemplate}}
+							<li>
+								{{>remindersTemplate}}
+							</li>
 						{{/each}}
 					</ul>
 				</div>
 				</div>
 				</div>
-		</div>
 	</div>
 {{/if}}
 </template>
 
 <template name="remindersTemplate">
-	<li>
+<!-- 	<li> -->
 		<div class="col-xs-12 dropdown-reminder-entry">
+		<div class="row">
+		<div class="col-xs-4 remove">
 			<button class="remove-reminder"><span class="glyphicon glyphicon-remove-circle"></span></button>
+		</div>
+		<div class="col-xs-8 rem-entry">
 			<span class="r">{{reminderTitle}}</span>
 		</div>
-	</li>
+		</div>
+		</div>
+<!-- 	</li> -->
 </template>
+

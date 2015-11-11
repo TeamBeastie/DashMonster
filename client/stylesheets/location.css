@@ -2,3 +2,8 @@
   height: 300px;
   width: 100%;
 }
+
+.button-row {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
