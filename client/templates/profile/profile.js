@@ -33,6 +33,17 @@ Template.profile.events({
   'click button.logout': function(e) {
     // Meteor.logout();
     Router.go("/logout")
+  },
+  'click button.add-location': function(e) {
+    console.log(e);
+    var newLocation = {
+      userId: Meteor.userId(),
+      name: "Untitled Location",
+      lat: 45.52,
+      lng: -122.681944
+    };
+    var locId = Locations.insert(newLocation);
+    Router.go("/location/" + locId);
   }
 })
 

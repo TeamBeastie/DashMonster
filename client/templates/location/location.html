@@ -10,7 +10,7 @@
       </a>
     </div>
 
-    
+
   <div class="row">
     <div class="col-xs-12 label">
       Location Name
@@ -28,7 +28,7 @@
       {{> googleMap name="map" options=mapOptions}}
     </div>
   </div>
-  
+
   <div class="row">
     <div class="buttons col-xs-12 button-row">
       <div class="row">
@@ -44,7 +44,7 @@
       </div>
     </div>
   </div>
- 
+
 
 
 
@@ -53,5 +53,13 @@
       {{> locationStop}}
     {{/each}}
   </div>
-</div>
+  <div class="row">
+    <div class="col-xs-6 view-link"></div>
+    <div class="col-xs-6 view-link">
+      <button class="add-location">NEW STOP<span class="glyphicon glyphicon-plus-sign"></span></button>
+    </div>
+  </div>
+  <div class="col-xs-12 exit">
+    <button class="delete delete-location">DELETE LOCATION</button>
+  </div>
 </template>
