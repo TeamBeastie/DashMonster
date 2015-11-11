@@ -1,7 +1,19 @@
 <template name="location">
+<div class="col-xs-12 col-sm-10 col-sm-push-1 col-lg-8 col-lg-push-2">
+
+    <div class="row">
+      <a href="{{pathFor 'profile'}}">
+        <div class="col-xs-6 view-link left">
+          <span class="glyphicon glyphicon-menu-left"></span>
+          BACK TO PROFILE
+        </div>
+      </a>
+    </div>
+
+
   <div class="row">
-    <div class="col-xs-12">
-      <p>Location Name</p>
+    <div class="col-xs-12 label">
+      Location Name
     </div>
   </div>
   <div class="row">
@@ -16,11 +28,26 @@
       {{> googleMap name="map" options=mapOptions}}
     </div>
   </div>
+
   <div class="row">
-    <div class="buttons col-xs-12">
-      <button class="cancel btn btn-danger">CANCEL</button><button class="use-current btn btn-info">USE CURRENT LOCATION</button><button class="save btn btn-success">SAVE</button>
+    <div class="buttons col-xs-12 button-row">
+      <div class="row">
+        <div class="col-xs-4">
+        <button class="cancel btn btn-danger">CANCEL</button>
+        </div>
+        <div class="col-xs-4">
+        <button class="use-current btn btn-info">USE CURRENT LOCATION</button>
+        </div>
+        <div class="col-xs-4">
+        <button class="save btn btn-success">SAVE</button>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
   <div class="row">
     {{#each stops}}
       {{> locationStop}}

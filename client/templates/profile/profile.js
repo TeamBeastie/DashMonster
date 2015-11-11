@@ -19,14 +19,15 @@ Template.profile.events({
     var $inputField = $(event.target).find(".reminderField");
     var remVar = $inputField.val();
     console.log(remVar);
-    Reminders.insert({
-      reminderTitle: remVar,
-      createdAt: new Date(),
-      userId: Meteor.userId()
-    });
+    if (remVar){
+      Reminders.insert({
+        reminderTitle: remVar,
+        createdAt: new Date(),
+        userId: Meteor.userId()
+      });
 
-    $inputField.val("");
-
+      $inputField.val("");
+    }   
     return false;
   },
   'click button.logout': function(e) {
