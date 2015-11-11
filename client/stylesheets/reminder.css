@@ -2,19 +2,6 @@
     padding: 0;
 }
 
-.reminder-bar {
-	background: #FF0018;
-/*	color: white;*/
-	font-size: 1.3em;
-/*	margin-bottom: 5px;*/
-}
-
-.reminder-bar a {
-	color: #FFF;
-}
-
-
-
 
 /*.dropdown button {
 	width: 100%;
@@ -44,14 +31,19 @@
     padding-left: 0;
 }
 
-.carousel-reminder-entry {
-	font-size: 1.1em;
-	background: #FF0018;
-	border: 0;
+.carousel-control span {
+    color: #FFF;
+/*    vertical-align: 10px;
+*/}
+
+.carousel-control .icon-next,
+.carousel-control .icon-prev {
+    margin-top: -18px;
 }
 
-.carousel-reminder-entry span {
-	padding-bottom: 3px;
+.rem-car-header {
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
 }
 
 .carousel-control.right,
@@ -65,10 +57,36 @@
 }
 
 
-
 /*//////////////////////////////////////
 NAVBAR DROPDOWN FOR REMINDERS
 //////////////////////////////////////*/
+
+.navbar-header {
+    margin-right: 0;
+    background: #FF0018;
+/*    border-color: #FFF;*/
+}
+
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #000;
+}
+
+.navbar-inverse,
+.navbar-brand {
+    color: #FFF !important;
+}
+.navbar-brand {
+    margin-left: 0;
+    color: #FFF;
+}
+.navbar-toggle,
+.navbar-toggle:focus {
+/*    margin-right: 0;*/
+    background: #FF0018 !important;
+    border-color: #FFF;
+    border: 0;
+}
 
 .nav.navbar-nav.navbar-right {
 	list-style: none;
@@ -90,8 +108,17 @@ NAVBAR DROPDOWN FOR REMINDERS
     color: #FFF;
 	background: #FF0018;
 	border: 0;
-	border-bottom: 1px solid #999999;
+	border-bottom: 1px solid #000;
 }
+
+.remove {
+    text-align: right;
+}
+
+.rem-entry {
+    text-align: left;
+}
+
 .remove-reminder {
 	background: #FF0018;
 	padding-top: 4px;
