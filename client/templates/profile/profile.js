@@ -37,7 +37,7 @@ Template.profile.events({
     console.log(e);
     var newLocation = {
       userId: Meteor.userId(),
-      name: "New Location",
+      name: "Untitled Location",
       lat: 45.52,
       lng: -122.681944
     };
