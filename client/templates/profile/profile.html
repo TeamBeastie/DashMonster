@@ -1,10 +1,13 @@
  <template name="profile">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1 col-lg-6 col-lg-push-3 main-display">
+
     <div class="row">
       <div class="col-xs-12 profile-header">
         EDIT SETTINGS
       </div>
     </div>
-     <div class="row">
+     
+    <!--  <div class="row">
        <div class="col-xs-12 label">
          Display Name
        </div>
@@ -17,7 +20,7 @@
         <input type="text" class="name-input" value="{{username}}">
       </div>
     </div>
-  </form>
+  </form> -->
 
 
 
@@ -29,6 +32,7 @@
 
  <ul class="locations-list">
  {{#each locations}}
+ <div class='location-entry'>
   <li>
     <a href="{{pathFor 'location'}}">
       <div class="row location-singular">
@@ -36,11 +40,12 @@
         {{name}}
         </div>
         <div class="col-xs-2">
-        >
+        <span class="glyphicon glyphicon-menu-right"></span>
         </div>
       </div>
     </a>
   </li>
+  </div>
  {{/each}}
  </ul>
 
@@ -49,8 +54,8 @@
     <div class="col-xs-5 col-xs-push-7 view-link">
 <!--     <input type="submit" value="NEW LOCATION"> -->
       <button class="add-location">
+        <span class="btn-text">ADD LOCATION</span>
         <span class="glyphicon glyphicon-plus-sign"></span>
-        ADD NEW LOCATION
       </button>
 <!--     <span class="glyphicon glyphicon-plus-sign"></span> -->
 
@@ -72,8 +77,8 @@
         </div>
 
         <div class="col-xs-5 view-link">
-          <button type="submit">
-            <span>ADD REMINDER</span>
+          <button type="submit" class="add-rem">
+            <span class="btn-text">ADD REMINDER</span>
             <span class="glyphicon glyphicon-plus-sign"></span>
           </button>
         </div>
@@ -92,4 +97,5 @@
        </button>
      </div>
    </div>
- </template>
+  </div>
+</template>
