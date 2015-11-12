@@ -1,4 +1,6 @@
 <template name="dashboard">
+<div class="col-xs-12 col-sm-10 col-sm-push-1 col-lg-6 col-lg-push-3 main-display">
+
     <div class="row">
       <div class="col-xs-12 dash-header">
         <div class="row">
@@ -8,6 +10,16 @@
                 <span class="glyphicon glyphicon-cog"></span>
 
                  <a href="{{pathFor 'profile'}}"><span class="s">SETTINGS</span></a>
+              </h4>
+            </div>
+          </a>
+          <a href="{{pathFor 'locations'}}">
+            <div class="col-xs-4 col-xs-push-4 right" id="profile-button">
+              <h4>
+<!--                 {{if location}} -->
+                 <a href="{{pathFor 'location'}}"><span class="s">{{location}}</span></a>
+                 <span class="glyphicon glyphicon-map-marker"></span>
+<!--                  {{/if}} -->
               </h4>
             </div>
           </a>
@@ -38,24 +50,6 @@
         </div>
       </div>
     {{/with}}
-
-
-<!-- Current Location -->
-
-  <div class="row">
-    <div class="col-xs-12 label">
-      Current Location
-    </div>
-
-    <a href="{{pathFor 'location'}}">
-
-      <div class="col-xs-12 location-singular">
-        {{location}}
-      </div>
-    </a>
-  </div>
-
-
 
 <!-- Weather and Forecast -->
 
@@ -121,6 +115,8 @@
 {{#each stops}}
   {{> dashboardStop}}
 {{/each}}
+
+</div>
   <script type="text/javascript">
 
     // <style>
@@ -212,3 +208,5 @@
         graph.append("svg:path").attr("d", line(data));
   </script>
 </template>
+
+

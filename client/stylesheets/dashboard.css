@@ -5,13 +5,18 @@
 
 }
 
-
 body,
 .container {
 	font-family: 'Open Sans Condensed', sans-serif;
 	/*font-family: 'Oswald', sans-serif;*/
 	background: #000000;
 	margin: auto;
+}
+
+.main-display {
+	padding-left: 0;
+	padding-right: 0;
+	background: #000;
 }
 
 a {
@@ -27,9 +32,7 @@ a:hover {
 .col-xs-12 {
 	text-align: center;
 	color: #FFFFFF;
-	background: #111111;
-	border: solid 1px #999999;
-	margin: auto;
+	margin: 0;
 }
 
 
@@ -37,7 +40,7 @@ a:hover {
 	background: #000000;
 	border: 0;
 	text-align: left;
-	font-size: 1.3em;
+	font-size: 1.6em;
 	font-weight: 300;
 	color: #5767CC;
 	padding: 0;
@@ -74,8 +77,6 @@ a:hover {
 .exit {
 	background: #000;
 	color: #FF0018;
-/*	font-size: 1.65em;*/
-/*	font-weight: bold;*/
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin-top: 40px;
@@ -86,7 +87,7 @@ a:hover {
 .exit button {
 	background: #000000;
 	color: #FF0018;
-	font-size: 1.1em;
+	font-size: 1.6em;
 	font-weight: bold;
 	padding-right: 75px;
 	padding-left: 75px;
@@ -101,31 +102,6 @@ a:hover {
 	border-radius: 5px;	
 }
 
-.location-singular {
-	text-align: left;
-	padding-top: 5px;
-	padding-left: 5px;
-	background: #000000;
-	color: white;
-	border-left: 0;
-	border-right: 0;
-	font-weight: 300;
-	font-size: 1.7em;
-	border-top: 0;
-	border-bottom: 1px solid #999999;
-}
-
-.location-singular:hover{
-	color: #38FF18;
-	border-bottom: 1px solid #38FF18;
-
-}
-
-.location-singular a:hover{
-	color: #38FF18;
-}
-
-
 
 
 
@@ -134,10 +110,6 @@ DASHBOARD HEADER LINKS
 ////////////////////////////////////////////////////*/
 
 
-.glyphicon.glyphicon-user {
-	margin-right: 5px;
-}
-
 .dash-header {
 	border: 0;
 }
@@ -145,16 +117,30 @@ DASHBOARD HEADER LINKS
 #profile-button {
 	background: #000000;
 	text-align: left;
-/*	vertical-align: 8px;
-*/	padding-left: 10px;
+	padding-left: 10px;
+	margin-top: 5px;
 	color: #9d9d9d;
-/*	border: 1px solid #9d9d9d;*/
 
+}
+
+#profile-button h4 {
+	font-size: 1.7em;
 }
 
 .s {
 	padding-left: 7px;
+	vertical-align: 2.5px;
 }
+
+.right h4 {
+	text-align: right;
+	padding-right: 10px;
+}
+
+/*#profile-button h4 span:hover {
+	color: #38FF18;
+}
+*/
 
 
 
@@ -168,6 +154,7 @@ DATE AND TIME
 	background: #000000;
 	text-align: center;
 	border: 0;
+	margin-bottom: 15px;
 }
 
 #date {
@@ -176,7 +163,7 @@ DATE AND TIME
 	color: white;
 	font-weight: 300;
 	padding-top: 8px;
-	font-size: 1.1em;
+	font-size: 1.5em;
 }
 
 
@@ -185,7 +172,7 @@ DATE AND TIME
 	color: white;
 	text-align: center;
 	font-family: 'Open Sans Condensed';
-	font-size: 3.4em;
+	font-size: 4em;
 	font-weight: 700;
 	line-height: 110%;
 	padding-top: 3px;
@@ -208,15 +195,16 @@ TEMPERATURE AND FORECAST
 #temp-bar {
 	background: #000000;
 	border-top: 0;
-	border-bottom: 1px solid #999999;
-	margin-bottom: 5px;
+/*	border-bottom: 1px solid #999999;*/
+	margin-top: 10px;
+	margin-bottom: 15px;
 
 }
 
  .col-xs-12.status {
 	background: #000000;
 	padding-top: 4px;
-	font-weight: 300;
+	font-size: 1.4em;
 	border: 0;
 	padding-bottom: 5px;
 
@@ -230,8 +218,7 @@ TEMPERATURE AND FORECAST
 
  .col-xs-12.status-temp {
 	background: #000000;
-	font-weight: 700;
-	font-size: 3.5em;
+	font-size: 4em;
 	line-height: 110%;
 	padding-top: 2px;
 	padding-right: 2px;
