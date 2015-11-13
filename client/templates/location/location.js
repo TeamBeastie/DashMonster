@@ -79,7 +79,14 @@ Template.location.events({
     $nameField.blur();
     Locations.update(location._id, {$set: {name: newName}});
   },
-  'click .add-location': function(e) {
-    console.log(e);
+  'click .add-stop': function(e, t) {
+    var newStop = {
+      locationId: this._id,
+      userId: Meteor.userId(),
+      isNew: true
+    };
+    Stops.insert(newStop, function(err, id) {
+      Router.go("stopEditor", {_id: id});
+    });
   }
 })

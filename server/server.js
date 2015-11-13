@@ -1,5 +1,21 @@
 Meteor.startup(function () {
   console.log("The Simple Dashboard app started up.");
+  var url = "https://developer.trimet.org/ws/V1/routeConfig/json/true/dir/true/appid/" + API_KEY_TRIMET + "/stops/true/";
+  if (BusRoutes.find().count() === 0) {
+    console.log("get data from trimet");
+    HTTP.get(url, function(error, result) {
+      if (error) {
+        console.log(error);
+      } else {
+        var data = JSON.parse(result.content);
+        BusRoutes.remove({});
+        data.resultSet.route.forEach(function(e, i) {
+          BusRoutes.insert(e);
+        })
+        console.log("Got data for " + BusRoutes.find().count() + " transit routes.");
+      };
+    })
+  }
 });
 
 Meteor.methods({
