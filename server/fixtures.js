@@ -30,7 +30,8 @@ if (Meteor.users.find().count() === 0) {
     directionId: 0,
     directionDescription: "to Downtown",
     stopId: 2616,
-    stopDescription: "SE Hawthorne and 30th"
+    stopDescription: "SE Hawthorne and 30th",
+    isNew: false
   });
   var erikHomeStop2 = Stops.insert({
     userId: erik,
@@ -41,7 +42,8 @@ if (Meteor.users.find().count() === 0) {
     directionId: 0,
     directionDescription: "to NW",
     stopId: 417,
-    stopDescription: "SE Belmont and 30th"
+    stopDescription: "SE Belmont and 30th",
+    isNew: false
   });
   var erikSchoolStop = Stops.insert({
     userId: erik,
@@ -52,7 +54,8 @@ if (Meteor.users.find().count() === 0) {
     directionId: 1,
     directionDescription: "to the SE",
     stopId: 13169,
-    stopDescription: "SW Main and 6th"
+    stopDescription: "SW Main and 6th",
+    isNew: false
   });
 };
 /*

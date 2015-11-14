@@ -1,0 +1,50 @@
+<template name="stopEditor">
+{{#if lineDescription}}
+  <div class="line-description">{{lineDescription}}</div>
+  {{#if directionDescription}}
+    <div class="direction-description">{{directionDescription}}</div>
+    {{#if stopDescription}}
+      <div class="stop-description">{{stopDescription}}</div>
+      <button class="cancel">CANCEL</button><button class="save">SAVE</button>
+    {{else}}
+      <h3>Choose a stop for {{lineDescription}} {{directionDescription}}</h3>
+      <ul>
+      {{#each busStops}}
+        {{> singleStop}}
+      {{/each}}
+      </ul>
+    {{/if}}
+  {{else}}
+    <h3>Choose a direction for {{lineDescription}}</h3>
+    <ul>
+    {{#with busDirections}}
+      {{#each dir}}
+        {{> singleDirection}}
+      {{/each}}
+    {{/with}}
+    </ul>
+  {{/if}}
+{{else}}
+  <h3>Choose a transit line</h3>
+  <ul>
+  {{#each busLines}}
+    {{> singleRoute}}
+  {{/each}}
+  </ul>
+{{/if}}
+<button class="delete">DELETE</button>
+</template>
+
+
+<template name="singleRoute">
+  <li class="route-name">{{desc}}</li>
+</template>
+
+<template name="singleDirection">
+  <li class="route-direction">{{desc}}</li>
+</template>
+
+<template name="singleStop">
+  <li class="route-stop">{{desc}}</li>
+</template>
+
