@@ -1,3 +1,4 @@
+
 Meteor.startup(function () {
   console.log("The Simple Dashboard app started up.");
 });

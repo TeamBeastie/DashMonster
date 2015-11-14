@@ -9,16 +9,17 @@
 
 .signup-header h1 {
 	font-weight: bold;
-	padding-bottom: 10px;
+	font-size: 3em;
+	padding-bottom: 6px;
 }
 
 .signup-header h3 {
-	font-size: 1.4em;
-	padding-bottom: 15px;
+	font-size: 1.6em;
+	padding-bottom: 7px;
 }
 
 .signup-header p {
-	font-size: 1.3em;
+	font-size: 1.5em;
 	color: #9d9d9d;
 }
 
@@ -36,21 +37,28 @@
 
 .signup label {
 	color: #FFF;
+	font-size: 1.6em;
 }
 
 .signup input {
+	font-size: 2em;
 	border: 0;
 	border-radius: 5px;
+	padding-bottom: 2px;
+}
+
+.signup-input {
+	font-size: 1.5em;
 }
 
 .signup input:hover {
 	color: #FFF;
 }
 
-.create-button {
+/*.create-button {
 
-	padding-bottom: 6px;
+	padding-bottom: 8px;
 	padding-top: 0;
 	margin-top: 15px;
 	border-radius: 5px;
-}
+}*/

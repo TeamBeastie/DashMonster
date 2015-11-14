@@ -128,7 +128,12 @@ DASHBOARD HEADER LINKS
 }
 
 .s {
+	font-size: .6em;
 	padding-left: 7px;
+/*	vertical-align: 2.5px;*/
+}
+
+.s-text {
 	vertical-align: 2.5px;
 }
 
@@ -197,7 +202,9 @@ TEMPERATURE AND FORECAST
 	border-top: 0;
 /*	border-bottom: 1px solid #999999;*/
 	margin-top: 10px;
-	margin-bottom: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #999999;
+
 
 }
 
