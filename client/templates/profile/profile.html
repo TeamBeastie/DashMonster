@@ -7,7 +7,7 @@
       </div>
     </div>
      
-    <!--  <div class="row">
+     <div class="row">
        <div class="col-xs-12 label">
          Display Name
        </div>
@@ -16,11 +16,11 @@
 
   <form class='name-change'>
     <div class="row">
-      <div class="col-xs-12 input">
+      <div class="col-xs-12">
         <input type="text" class="name-input" value="{{username}}">
       </div>
     </div>
-  </form> -->
+  </form>
 
 
 
@@ -32,9 +32,8 @@
 
  <ul class="locations-list">
  {{#each locations}}
- <div class='location-entry'>
   <li>
-    <a href="{{pathFor 'location'}}">
+    <a class="location-anchor" href="{{pathFor 'location'}}">
       <div class="row location-singular">
         <div class="col-xs-10">
         {{name}}
@@ -45,7 +44,6 @@
       </div>
     </a>
   </li>
-  </div>
  {{/each}}
  </ul>
 

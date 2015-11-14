@@ -1,12 +1,14 @@
 .header {
-	height: 325px;
+	height: 350px;
+/*	height: 500px;*/
 	background: #000;
 	text-align: center;
 	border: 0;
-	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 
-svg.logo-oval ellipse:hover {
+img svg.logo-oval ellipse:hover {
 	fill: #38FF18;
 
 }
@@ -26,48 +28,59 @@ svg.logo-oval ellipse:hover {
 	width: 100%;
 	font-weight: 300;
 	font-size: 1.3em;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 }
 
 .login-area input.input {
 	background: #000;
 	color: #fff;
-
-		padding: 5px;
-		padding-left: 10px;
-	margin-top: -5px;
+	font-size: 1.5em;
+	padding: 5px;
+	padding-left: 10px;
 	margin-bottom: 17px;
 	border: 1px solid #999999;
 	border-radius: 5px;
 }
 
-.login-area input:hover {
-	color: #999;
+.login-area input {
+	border: 1px solid #999;
 }
 
+.login-area input:hover {
+	color: #FFF;
+	border: 1px solid #38FF18;
+}
 
+input.login-button {
+/*	font-weight: 700;*/
+	border: 1px solid #000;
+	border-radius: 5px;
+}
 
 .login-button, .exit {
 	background: #000000;
 	color: #38FF18;
-	font-weight: 300;
 	font-size: 1.4em;
 	margin-top: 5px;
 
 }
 
+
+
 .login-button input,
 .exit input {
 	width: 53%;
-	border: 0;
-
 }
 
-.col-xs-6.left,
-.col-xs-6.right {
+.exit input {
+	border: 0;
+}
+
+.left,
+.right {
 	background: #000;
 	color: #999999;
-	font-size: 1.23em;
+	font-size: 1.7em;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	margin-top: 15px;
@@ -75,13 +88,13 @@ svg.logo-oval ellipse:hover {
 }
 
 
-.col-xs-6.left {
+.left {
 	text-align: left;
 	padding-left: 0;
 
 }
 
-.col-xs-6.right {
+.right {
 	text-align: right;
 	padding-right: 0;
 
