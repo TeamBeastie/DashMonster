@@ -1,9 +1,82 @@
+.glyphicon-menu-left {
+	color: #38FF18;
+}
+
+.to-set {
+	color: #38FF18;
+	vertical-align: 3px;
+}
+
+.to-set:hover {
+	color: #FFF;
+}
+
 .map-container {
   height: 300px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .button-row {
-	padding-top: 5px;
+	padding-top: 20px;
 	padding-bottom: 5px;
+}
+
+
+.ca-btn {
+	text-align: left;
+}
+
+.cu-btn {
+	text-align: center;
+}
+
+.sa-btn {
+	text-align: right;
+}
+
+.cancel,
+.use-current,
+.save {
+	background: #000;
+	font-size: 1.5em;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.cancel{
+	border-color: #FF0018;
+}
+
+.cancel:hover{
+	background: #FF0018;
+}
+
+.use-current {
+	padding-left: 10%;
+	padding-right: 10%;
+	border-color: #5767CC;
+}
+
+.use-current:hover {
+	background: #5767CC;
+/*	color: #000;*/
+}
+
+.save {
+	border-color: #38FF18;
+}
+
+.save:hover {
+	background: #38FF18;
+	color: #000;
+}
+
+.add-stop {
+	margin-right: 10px;
+}
+
+.stops-list {
+	list-style: none;
+	margin: 0;
 }

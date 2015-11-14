@@ -8,15 +8,6 @@
 	font-size: 2.4em;
 }
 
-.col-xs-12.profile-form {
-	text-align: left;
-	border: 0;
-
-}
-
-.name-change {
-	text-align: left;
-}
 
 .name-input {
 	background: #000;
@@ -37,17 +28,12 @@
 	border-top: 0;
 	border-left: 0;
 	border-right: 0;
-
-
 }
-
-
 
 .location-singular {
 	text-align: left;
 	padding-top: 5px;
 	background: #000000;
-	color: white;
 	border-left: 0;
 	border-right: 0;
 	font-weight: 300;
@@ -57,31 +43,24 @@
 	border-top: 0;
 	border-bottom: 1px solid #999999;
 }
+.location-anchor div {
+	color: #FFF;
+}
 
-.location-singular span {
+.location-anchor span {
 	color: #000;
 }
 
-
-.location-singular:hover,
-.location-singular div:hover,
-.location-singular div span:hover {
+.location-anchor:hover div,
+.location-anchor:hover span {
 	color: #38FF18;
 	border-color: #38FF18;
 }
 
-
-
 .locations-list {
-	color: #FFF;
 	list-style: none;
 	padding-left: 0;
 }
-
-.locations-list a {
-	color: #FFF;
-}
-
 
 .col-xs-12.input input {
 	background: #000000;
@@ -93,7 +72,6 @@
 	padding-left: 5px;
 	margin-bottom: 20px;
 }
-
 
 .view-link {
 	background: #000;
@@ -110,13 +88,6 @@
 	font-size: 1.4em;
 	border: 0;
 }
-
-/*.add-location {
-	background: #000;
-	font-size: 1.3em;
-	padding-top: 10px;
-	border: 0;
-}*/
 
 .add-rem {
 	margin-top: 15px;
@@ -139,13 +110,11 @@
 }
 
 
-
 .glyphicon.glyphicon-plus-sign,
 .glyphicon.glyphicon-globe,
 .glyphicon.glyphicon-road {
 	color: #38FF18;
 	margin-left: 8px;
-	/*	padding-bottom: 2px;*/
 	font-size: 1.1em;
 }
 
@@ -156,7 +125,7 @@
 	font-weight: bold;
 	padding-top: 5.25px;
 	padding-bottom: 5px;
-	margin-top: 40px;
+	margin-top: 60px;
 	margin-bottom: 50px;
 
 }

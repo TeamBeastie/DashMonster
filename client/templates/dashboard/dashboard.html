@@ -5,11 +5,11 @@
       <div class="col-xs-12 dash-header">
         <div class="row">
           <a href="{{pathFor 'profile'}}">
-            <div class="col-xs-4" id="profile-button">
+            <div class="col-xs-4 left" id="profile-button">
               <h4>
-                <span class="glyphicon glyphicon-cog"></span>
+                <span class="glyphicon glyphicon-cog s"></span>
 
-                 <a href="{{pathFor 'profile'}}"><span class="s">SETTINGS</span></a>
+                 <a href="{{pathFor 'profile'}}"><span class="s s-text">{{user}}</span></a>
               </h4>
             </div>
           </a>
@@ -17,8 +17,8 @@
             <div class="col-xs-4 col-xs-push-4 right" id="profile-button">
               <h4>
 <!--                 {{if location}} -->
-                 <a href="{{pathFor 'location'}}"><span class="s">{{location}}</span></a>
-                 <span class="glyphicon glyphicon-map-marker"></span>
+                 <a href="{{pathFor 'location'}}"><span class="s s-text">{{location}}</span>
+                 <span class="glyphicon glyphicon-map-marker s"></span></a>
 <!--                  {{/if}} -->
               </h4>
             </div>
