@@ -1,4 +1,4 @@
-if (Meteor.users.find().count() === 0) {
+/*if (Meteor.users.find().count() === 0) {
   var erik = Accounts.createUser({
     username: 'erik',
     password: 'password',
@@ -57,7 +57,8 @@ if (Meteor.users.find().count() === 0) {
     stopDescription: "SW Main and 6th",
     isNew: false
   });
-};
+};*/
+
 /*
 if (Stops.find().count() === 0) {
   Stops.insert({
