@@ -3,32 +3,28 @@
   <div class="col-xs-12 signup-header">
     <h1>Sign Up</h1>
     <h3>Stay ahead of your game with DashMonster!</h3>
-    <p>Already have an account?  <a href="{{pathFor 'login'}}">Log in</a></p>
   </div>
 </div>
 
 <div class="row">
- <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3 login-area signup">
-  <form class="signup">
-    <div class="col-sm-10 col-sm-push-1">
-      <label>Email Address</label>
-      <input class="input" type="email" placeholder="email address" name="email" autofocus>
+  <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3 login-area signup">
+    <form class="signup">
+      <div class="col-sm-10 col-sm-push-1">
+        <input class="input signup-input" type="email" placeholder="email address" name="email" autofocus>
+        <input class="input signup-input" type="displayname" placeholder="What shall we call you?" name="displayname">
+        <input class="input signup-input" type="password" placeholder="choose a password" name="password">
+        <input class="input signup-input" type="password" placeholder="confirm password" name="confirm">
+      </div>
+    <!-- <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2 login-button create-button"> -->
+        <input class="login-button create-button" type="submit" value="Create Account">
+      <!-- </div> -->
+    </form>
 
-      <label>Your Name</label>
-      <input class="input signup-input" type="displayname" placeholder="What shall we call you?" name="displayname">
-
-      <label for="password">Password</label>
-      <input class="input signup-input" type="password" name="password">
-
-      <label for="confirm">Confirm Password</label>
-      <input class="input signup-input" type="password" name="confirm">
-    </div>
-
-      <!-- <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2 login-button create-button"> -->
-        <input class="login-button" type="submit" value="Create Account">
-    <!-- </div> -->
-  </form>
-
+  <div class="row">
+  <div class="col-sm-8-push-2 alr-log">
+  <h3>Already have an account?  <a href="{{pathFor 'login'}}"><button class="login-page-btn-sm">Log in</button> </a></h3>
+  </div>
+  </div>
   </div>
 </div>
 </template>

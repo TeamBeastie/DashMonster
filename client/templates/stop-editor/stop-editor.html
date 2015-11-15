@@ -5,7 +5,7 @@
     <div class="direction-description">{{directionDescription}}</div>
     {{#if stopDescription}}
       <div class="stop-description">{{stopDescription}}</div>
-      <button class="save">SAVE</button>
+      
     {{else}}
       <h3>Choose a stop for {{lineDescription}} {{directionDescription}}</h3>
       <ul>
@@ -32,12 +32,22 @@
   {{/each}}
   </ul>
 {{/if}}
-<div class="row">
-  <button class="cancel">CANCEL</button>
-</div>
-<div class="row">
-  <button class="delete">DELETE</button>
-</div>
+
+      <div class="row">
+        
+        <div class="col-xs-4 sa-btn">
+          <button class="save btn btn-success">SAVE</button>
+        </div>
+
+        <div class="col-xs-4 ca-btn">
+          <button class="cancel btn btn-danger">CANCEL</button>
+        </div>
+
+        <div class="col-xs-4 del-btn">
+          <button class="delete">DELETE</button>
+        </div>
+
+      </div>
 
 </template>
 

@@ -1,4 +1,5 @@
-.glyphicon-menu-left {
+.glyphicon-menu-left,
+.glyphicon-menu-right {
 	color: #38FF18;
 }
 
@@ -7,7 +8,8 @@
 	vertical-align: 3px;
 }
 
-.to-set:hover {
+.profile-anchor:hover div,
+.profile-anchor:hover span {
 	color: #FFF;
 }
 
@@ -21,7 +23,6 @@
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 5px;
-	text-align: center;
 
 }
 
@@ -30,32 +31,36 @@
 	padding-right: 0;
 }
 
-/*.ca-btn {
-	text-align: left;
-}
-
-.cu-btn {
-	text-align: center;
-}
-
-.sa-btn {
-	text-align: center;
-}*/
 
 .cancel,
 .use-current,
-.save {
+.save,
+.delete {
+	width: 100%;
 	background: #000;
 	font-size: 1.5em;
-/*	padding-left: 20%;
-	padding-right: 20%;*/
+	margin-bottom: 15px;
+/*	margin-left: 10%;
+	margin-right: 10%;*/
 }
+
+.delete {
+	padding: 5px;
+	color: #FF0018;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+}
+
+.delete:hover {
+	background: #222;
+	border-color: #FF0018;
+}
+
+
 
 .cancel{
 	border-color: #FF0018;
-	width: 25%;
-/*	margin-right: 10%;*/
-	margin-left: 0;
+/*	margin-left: 0;*/
 }
 
 .cancel:hover{
@@ -63,23 +68,17 @@
 }
 
 .use-current {
-/*	padding-left: 10%;
-	padding-right: 10%;*/
+
 	border-color: #5767CC;
-	width: 35%;
+	min-width: 194px;
 }
 
 .use-current:hover {
 	background: #5767CC;
-/*	color: #000;*/
 }
 
 .save {
 	border-color: #38FF18;
-/*	padding-left: 30%;
-	padding-right: 30%;*/
-	width: 25%;
-/*	margin-right: 15%;*/
 }
 
 .save:hover {
@@ -87,11 +86,11 @@
 	color: #000;
 }
 
-.add-stop {
-	margin-right: 10px;
+.add-stop span {
+	padding-right: 5px;
 }
 
 .stops-list {
 	list-style: none;
-	margin: 0;
+	padding-left: 0;
 }

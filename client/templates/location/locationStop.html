@@ -1,19 +1,33 @@
 <template name="locationStop">
-  <div class="col-xs-12">
-    <div class="row">
-	    <li>
-	    	<a href="{{pathFor 'stopEditor'}}">
-			    <div class="col-xs-2">
-			    	{{lineDescription}}
+
+	<div class="row">
+	  <li>
+	  	<a href="{{pathFor 'stopEditor'}}">
+	    	<div class="col-xs-12">
+			    <div class="row location-lines">
+				    
+				    <div class="col-xs-2 line-number">
+				    	{{lineNumber}}
+				    </div>
+
+				    <div class="col-xs-6">
+					    <div class="row">
+						    <div class="col-xs-12 line-desc">
+									{{lineDescription}}
+						    </div>
+						    <div class="col-xs-12 direction-desc">
+					      	{{directionDescription}}
+					      </div>
+				      </div>
+				    </div>
+
+				    <div class="col-xs-3 col-xs-push-1 stop-desc">
+				      {{stopDescription}}
+				    </div>
 			    </div>
-			    <div class="col-xs-4">
-		      	{{directionDescription}}
-		      </div>
-		      <div class="col-xs-6">
-		      	{{stopDescription}}
-		      </div>
-	    	</a>
-	    </li>
-    </div>
-  </div>
+		    </div>
+	  	</a>
+	  </li>
+	</div>
+
 </template>
