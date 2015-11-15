@@ -1,56 +1,63 @@
 <template name="stopEditor">
+<div class="list-group">
 {{#if lineDescription}}
-  <div class="line-description">{{lineDescription}}</div>
+  <button type="button" class="list-group-item line-description top-level">{{lineDescription}}</button>
+  <!-- <div class="line-description">{{lineDescription}}</div> -->
   {{#if directionDescription}}
-    <div class="direction-description">{{directionDescription}}</div>
+    <!-- <div class="direction-description">{{directionDescription}}</div> -->
+    <button type="button" class="list-group-item direction-description top-level">{{directionDescription}}</button>
     {{#if stopDescription}}
-      <div class="stop-description">{{stopDescription}}</div>
-      <button class="save">SAVE</button>
+      <!-- <div class="stop-description">{{stopDescription}}</div> -->
+      <button type="button" class="list-group-item stop-description top-level">{{stopDescription}}</button>
     {{else}}
-      <h3>Choose a stop for {{lineDescription}} {{directionDescription}}</h3>
-      <ul>
+      <div class="list-group-item active">CHOOSE A STOP</div>
+      <!-- <div class="list-group-item active">CHOOSE A STOP FOR {{lineDescription}} {{directionDescription}} <span class="caret"></span></div> -->
+      <!-- <h3>Choose a stop for {{lineDescription}} {{directionDescription}}</h3> -->
       {{#each busStops}}
         {{> singleStop}}
       {{/each}}
-      </ul>
     {{/if}}
   {{else}}
-    <h3>Choose a direction for {{lineDescription}}</h3>
-    <ul>
+    <!-- <h3>Choose a direction for {{lineDescription}}</h3> -->
+    <div class="list-group-item active">CHOOSE A DIRECTION</div>
+    <!-- <div class="list-group-item active">CHOOSE A DIRECTION FOR {{lineDescription}} <span class="caret"></span></div> -->
     {{#with busDirections}}
       {{#each dir}}
         {{> singleDirection}}
       {{/each}}
     {{/with}}
-    </ul>
   {{/if}}
 {{else}}
-  <h3>Choose a transit line</h3>
-  <ul>
+  <!-- <h3>Choose a transit line</h3> -->
+  <div class="list-group-item active">CHOOSE A TRANSIT LINE</div>
   {{#each busLines}}
     {{> singleRoute}}
   {{/each}}
-  </ul>
 {{/if}}
-<div class="row">
-  <button class="cancel">CANCEL</button>
 </div>
-<div class="row">
-  <button class="delete">DELETE</button>
+<div class="col-xs-12 stop-editor">
+  <button class="cancel btn btn-danger">CANCEL</button>
+  {{#if stopDescription}}
+    <button class="save btn btn-success">SAVE</button>
+  {{/if}}
+</div>
+<div class="col-xs-12 exit">
+  <button class="delete delete-location">DELETE TRANSIT STOP</button>
 </div>
 
 </template>
 
 
 <template name="singleRoute">
-  <li class="route-name">{{desc}}</li>
+  <!-- <li class="route-name">{{desc}}</li> -->
+  <button type="button" class="list-group-item">{{desc}}</button>
 </template>
 
 <template name="singleDirection">
-  <li class="route-direction">{{desc}}</li>
+  <button type="button" class="list-group-item">{{desc}}</button>
 </template>
 
 <template name="singleStop">
-  <li class="route-stop">{{desc}}</li>
+  <button type="button" class="list-group-item">{{desc}}</button>
 </template>
 

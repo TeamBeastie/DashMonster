@@ -1,22 +1,21 @@
 <template name="location">
 <div class="col-xs-12 col-sm-10 col-sm-push-1 col-lg-6 col-lg-push-3 main-display">
 
-    <div class="row">
-      <a href="{{pathFor 'profile'}}">
-        <div class="col-xs-4 view-link left" id="profile-button">
-          <span class="glyphicon glyphicon-menu-left"></span>
-          <span class="to-set">TO SETTINGS</span>
-        </div>
-      </a>
-    </div>
-
+  <div class="row">
+    <a href="{{pathFor 'profile'}}">
+      <div class="col-xs-4 view-link left" id="profile-button">
+        <span class="glyphicon glyphicon-menu-left"></span>
+        <span class="to-set">TO SETTINGS</span>
+      </div>
+    </a>
+  </div>
 
   <div class="row">
     <div class="col-xs-12 label">
       Location Name
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-xs-12">
       <form class='name-change'>
@@ -24,6 +23,7 @@
       </form>
     </div>
   </div>
+
   <div class="row">
     <div class="map-container">
       {{> googleMap name="map" options=mapOptions}}
@@ -48,9 +48,6 @@
     </div>
 
 
-
-
-
   <div class="row">
     <ul class="stops-list">
       {{#each stops}}
@@ -68,10 +65,8 @@
     </div>
   </div>
 
-
-
   <div class="col-xs-12 exit">
     <button class="delete delete-location">DELETE LOCATION</button>
   </div>
-  </div>
+</div>
 </template>

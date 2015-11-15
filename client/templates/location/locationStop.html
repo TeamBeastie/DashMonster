@@ -3,7 +3,16 @@
     <div class="row">
 	    <li>
 	    	<a href="{{pathFor 'stopEditor'}}">
-			    <div class="col-xs-2">
+          <div class="row">
+            {{lineDescription}}
+          </div>
+          <div class="row">
+            {{directionDescription}}
+          </div>
+          <div class="row">
+            {{stopDescription}}
+          </div>
+<!-- 			    <div class="col-xs-2">
 			    	{{lineDescription}}
 			    </div>
 			    <div class="col-xs-4">
@@ -12,7 +21,7 @@
 		      <div class="col-xs-6">
 		      	{{stopDescription}}
 		      </div>
-	    	</a>
+ -->	    	</a>
 	    </li>
     </div>
   </div>
