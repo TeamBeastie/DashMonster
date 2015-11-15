@@ -109,6 +109,9 @@ NAVBAR DROPDOWN FOR REMINDERS
 	background: #FF0018;
 	border: 0;
 	border-bottom: 1px solid #000;
+    text-align: left;
+    padding: 8px 22px;
+    text-transform: uppercase;
 }
 
 .remove {

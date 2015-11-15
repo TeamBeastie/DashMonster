@@ -91,7 +91,7 @@ Template.stopEditor.helpers({
 });
 
 Template.stopEditor.events({
-  'click div.line-description': function (event, template) {
+  'click button.line-description': function (event, template) {
     var stopData = Session.get(CURRENT_STOP);
     // stopData["_id"] = null; // why am I wiping out the ID?
     stopData["lineDescription"] = null;
@@ -102,7 +102,7 @@ Template.stopEditor.events({
     stopData["stopId"] = null;
     Session.set(CURRENT_STOP, stopData);
   },
-  'click div.direction-description': function (event, template) {
+  'click button.direction-description': function (event, template) {
     var stopData = Session.get(CURRENT_STOP);
     stopData["directionDescription"] = null;
     stopData["directionId"] = null;
@@ -110,7 +110,7 @@ Template.stopEditor.events({
     stopData["stopId"] = null;
     Session.set(CURRENT_STOP, stopData);
   },
-  'click div.stop-description': function (event, template) {
+  'click button.stop-description': function (event, template) {
     var stopData = Session.get(CURRENT_STOP);
     stopData["stopDescription"] = null;
     stopData["stopId"] = null;
@@ -152,7 +152,7 @@ Template.stopEditor.events({
 });
 
 Template.singleRoute.events({
-  'click li.route-name': function(e, t) {
+  'click button': function(e, t) {
     // save the lineDescription and lineId to the `stopData`
     var stopData = Session.get(CURRENT_STOP);
     stopData.lineDescription = this.desc;
@@ -163,7 +163,7 @@ Template.singleRoute.events({
 })
 
 Template.singleDirection.events({
-  'click li.route-direction': function(e, t) {
+  'click button': function(e, t) {
     var stopData = Session.get(CURRENT_STOP);
     stopData.directionDescription = this.desc;
     stopData.directionId = this.dir;
@@ -174,7 +174,7 @@ Template.singleDirection.events({
 })
 
 Template.singleStop.events({
-  'click li.route-stop': function(e, t) {
+  'click button': function(e, t) {
     var stopData = Session.get(CURRENT_STOP);
     stopData.stopDescription = this.desc;
     stopData.stopId = this.locid;

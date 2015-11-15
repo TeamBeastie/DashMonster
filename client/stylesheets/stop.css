@@ -5,36 +5,26 @@ TRANSIT ROUTES
 .bus-bar {
 	border-bottom: 1px solid #999999;
 	font-size: 2em;
-
-
 }
 
-
 .bus-line {
-	background: #000000;
+	background: transparent;
 	text-align: left;
 	font-weight: 700;
 	color: #A565CC;
 	font-size: 1.7em;
-  	padding-right: 5px;
-  	padding-top: 12px;
-  	padding-bottom: 10px;
-
-
+	padding-right: 5px;
+	padding-top: 12px;
+	padding-bottom: 10px;
 }
 
-/*div .col-xs-4.bus-line:nth-child(odd) {
-	color: orange;
-
-}*/
-
 .bus-arrival {
-	background: #000000;
+	background: transparent;
 	text-align: right;
 	font-weight: 300;
 	font-size: 1.2em;
+	color: #FFF;
   	padding-top: 18px;
   	padding-bottom: 11px;
-
 
 }

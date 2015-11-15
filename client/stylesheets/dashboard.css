@@ -264,7 +264,7 @@ TEMPERATURE AND FORECAST
 }
 
 /* EXPERIMENTAL SVG GRAPH STYLES */
-
+/*
        path {
          stroke: steelblue;
          stroke-width: 1;
@@ -287,3 +287,4 @@ TEMPERATURE AND FORECAST
          fill: none;
          stroke: #000;
        }
+*/

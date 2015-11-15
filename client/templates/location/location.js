@@ -2,6 +2,12 @@ var markers = null;
 var location = null; // this.data
 
 Template.location.onRendered(function() {
+  this.autorun(function () {
+    var ll = Geolocation.latLng();
+    if (ll) {
+      setLatLng(ll.lat, ll.lng);
+    };
+  });
   location = this.data;
   markers = [];
   GoogleMaps.load();
