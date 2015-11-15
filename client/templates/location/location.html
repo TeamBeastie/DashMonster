@@ -1,14 +1,22 @@
 <template name="location">
 <div class="col-xs-12 col-sm-10 col-sm-push-1 col-lg-6 col-lg-push-3 main-display">
 
-  <div class="row">
-    <a href="{{pathFor 'profile'}}">
-      <div class="col-xs-4 view-link left" id="profile-button">
-        <span class="glyphicon glyphicon-menu-left"></span>
-        <span class="to-set">TO SETTINGS</span>
-      </div>
-    </a>
-  </div>
+    <div class="row">
+      <a class="profile-anchor" href="{{pathFor 'profile'}}">
+        <div class="col-xs-6 view-link left" id="profile-button">
+          <span class="glyphicon glyphicon-menu-left"></span>
+          <span class="to-set">TO SETTINGS</span>
+        </div>
+      </a>
+      <a class="profile-anchor" href="{{pathFor 'dashboard'}}">
+        <div class="col-xs-6 view-link right" id="profile-button">
+          <span class="to-set">TO DASHBOARD</span>
+          <span class="glyphicon glyphicon-menu-right"></span>
+        </div>
+      </a>
+    </div>
+
+
 
   <div class="row">
     <div class="col-xs-12 label">
@@ -30,6 +38,35 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+
+  <div class="row">
+    <div class="buttons col-xs-12 button-row">
+
+    <div class="row">
+        <div class="col-sm-12 cu-btn">
+        <button class="use-current btn btn-info">USE CURRENT LOCATION</button>
+        </div>
+        
+        <div class="col-xs-6 ca-btn">
+        <button class="cancel btn btn-danger">CANCEL</button>
+        </div>
+
+        <div class="col-xs-6 sa-btn">
+        <button class="save btn btn-success">SAVE</button>
+        </div>
+
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+
+
+=======
 <!--   <div class="row"> -->
   <div class="buttons col-xs-12 button-row">
 <!--       <div class="row"> -->
@@ -45,6 +82,13 @@
 <!--       </div> -->
 <!--     </div> -->
   </div>
+>>>>>>> master
+
+  <div class="row">
+    <div class="col-xs-12 label">
+      Location Stops
+    </div>
+  </div>
 
   <div class="row">
     <ul class="stops-list">
@@ -55,7 +99,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-5 col-xs-push-7 view-link">
+    <div class="col-xs-8 col-xs-push-4 view-link">
       <button class="add-location add-stop">
         <span class="btn-text">NEW STOP</span>
         <span class="glyphicon glyphicon-plus-sign"></span>
