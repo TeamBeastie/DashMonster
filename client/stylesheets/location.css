@@ -18,12 +18,19 @@
 }
 
 .button-row {
+	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 5px;
+	text-align: center;
+
 }
 
+.buttons {
+	padding-left: 0;
+	padding-right: 0;
+}
 
-.ca-btn {
+/*.ca-btn {
 	text-align: left;
 }
 
@@ -32,20 +39,23 @@
 }
 
 .sa-btn {
-	text-align: right;
-}
+	text-align: center;
+}*/
 
 .cancel,
 .use-current,
 .save {
 	background: #000;
 	font-size: 1.5em;
-	padding-left: 20%;
-	padding-right: 20%;
+/*	padding-left: 20%;
+	padding-right: 20%;*/
 }
 
 .cancel{
 	border-color: #FF0018;
+	width: 25%;
+/*	margin-right: 10%;*/
+	margin-left: 0;
 }
 
 .cancel:hover{
@@ -53,9 +63,10 @@
 }
 
 .use-current {
-	padding-left: 10%;
-	padding-right: 10%;
+/*	padding-left: 10%;
+	padding-right: 10%;*/
 	border-color: #5767CC;
+	width: 35%;
 }
 
 .use-current:hover {
@@ -65,6 +76,10 @@
 
 .save {
 	border-color: #38FF18;
+/*	padding-left: 30%;
+	padding-right: 30%;*/
+	width: 25%;
+/*	margin-right: 15%;*/
 }
 
 .save:hover {
