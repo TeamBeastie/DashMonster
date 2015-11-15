@@ -2,8 +2,6 @@ Template.signup.events({
   'submit form': function(event, template) {
     event.preventDefault();
     var email = template.$('[name=email]').val();
-    var displayname = template.$('[name=displayname]').val();
-    // var password = template.$('[name=password]').val();
     var password = $('[name=password]').val();
     var confirm = $('[name=confirm]').val();
 
@@ -13,21 +11,18 @@ Template.signup.events({
       errors.email = 'Email is required';
     }
 
-    if (! displayname) {
-      errors.displayname = 'Name is required';
-    }
-
     if (! password) {
       errors.password = 'Password is required';
     }
 
     if (password !== confirm) {
-      errors.password = 'Password is required';
+      errors.confirm = "Passwords don't match";
     }
 
     // Session.set(ERRORS_KEY, errors);
     if (_.keys(errors).length > 0) {
       console.log(_.keys(errors));
+      console.log(errors);
       return;
     }
 
@@ -39,14 +34,11 @@ Template.signup.events({
       }
     }, function (error) {
       if (error) {
-        console.log("error!");
+        console.log("error creating new account!");
         console.log(error);
         return;
       }
-      console.log("go to the Profile page");
-      console.log(Meteor.user());
       Session.set('newAccount', true);
-      // Router.go('profile')
     });
   }
 })

@@ -24,6 +24,7 @@ Template.login.events({
     Meteor.loginWithPassword(email, password, function(error) {
       if (error) {
         // return Session.set(ERRORS_KEY, {'none': error.reason});
+        console.log("error logging in!");
         console.log(error);
         return;
       }
