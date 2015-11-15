@@ -23,13 +23,11 @@
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 
 }
 
-.buttons {
-	padding-left: 0;
-	padding-right: 0;
-}
 
 
 .cancel,
