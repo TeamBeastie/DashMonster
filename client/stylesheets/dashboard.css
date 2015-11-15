@@ -86,7 +86,7 @@ a:hover {
 	font-weight: bold;
 	width: 100%;
 	border: 1px solid #000;
-	border-radius: 5px;	
+	border-radius: 5px;
 
 
 }
@@ -128,7 +128,8 @@ DASHBOARD HEADER LINKS
 }
 
 .s-text {
-	vertical-align: 2px;
+	vertical-align: 2.5px;
+	text-transform: uppercase;
 }
 
 /*.right h4 {
