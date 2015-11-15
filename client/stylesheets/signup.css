@@ -20,35 +20,30 @@
 
 .signup-header p {
 	font-size: 1.5em;
-	color: #9d9d9d;
 }
 
-.signup-header a {
-	text-decoration: underline;
-}
 
 .signup {
-	background: #555;
-/*		background: #FFF;*/
-	border-radius: 5px;
 	padding: 10px;
 
 }
 
-.signup label {
-	color: #FFF;
-	font-size: 1.6em;
-}
 
 .signup input {
 	font-size: 2em;
-	border: 0;
+	border: 1px solid #000;
 	border-radius: 5px;
 	padding-bottom: 2px;
+	margin-bottom: 5px;
+}
+
+.create-button {
+
 }
 
 .signup-input {
-	font-size: 1.5em;
+	font-size: 2em;
+	margin-bottom: 5px;
 }
 
 .signup input:hover {
@@ -62,3 +57,22 @@
 	margin-top: 15px;
 	border-radius: 5px;
 }*/
+
+.alr-log a {
+	text-decoration: underline;
+	color: #38FF18;
+}
+
+.login-page-btn-sm {
+	background: #000;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+	border: 1px solid #38FF18;
+	border-radius: 5px;
+}
+
+.alr-log:hover a {
+	color: #FFF;
+}

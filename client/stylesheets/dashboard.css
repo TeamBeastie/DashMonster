@@ -54,19 +54,14 @@ a:hover {
 
 }
 
-.col-xs-6 {
+/*.col-xs-6 {
 	color: #000000;
 	padding-left: 15px;
 }
-
+*/
 
 .col-xs-4 {
 	color: #000000;
-}
-
-.col-xs-4.empty{
-	background: #000000;
-
 }
 
 .col-xs-8 {
@@ -97,6 +92,7 @@ a:hover {
 }
 
 .exit button:hover {
+	color: #FFF;
 	border: 1px solid #FF0018;
 	border-radius: 5px;
 }
@@ -114,9 +110,8 @@ DASHBOARD HEADER LINKS
 }
 
 #profile-button {
-	background: #000000;
-	text-align: left;
 	padding-left: 10px;
+	padding-right: 10px;
 	margin-top: 5px;
 	color: #9d9d9d;
 
@@ -137,16 +132,18 @@ DASHBOARD HEADER LINKS
 	text-transform: uppercase;
 }
 
-.right h4 {
+/*.right h4 {
 	text-align: right;
 	padding-right: 10px;
+}*/
+
+.left {
+	text-align: left;
 }
 
-/*#profile-button h4 span:hover {
-	color: #38FF18;
+.right {
+	text-align: right;
 }
-*/
-
 
 
 
@@ -230,7 +227,6 @@ TEMPERATURE AND FORECAST
 	padding-top: 2px;
 	padding-right: 2px;
 	border: 0;
-	font-weight: 700;
 }
 
 .status-temp.lo {
@@ -269,7 +265,7 @@ TEMPERATURE AND FORECAST
 }
 
 /* EXPERIMENTAL SVG GRAPH STYLES */
-
+/*
        path {
          stroke: steelblue;
          stroke-width: 1;
@@ -292,3 +288,4 @@ TEMPERATURE AND FORECAST
          fill: none;
          stroke: #000;
        }
+*/
