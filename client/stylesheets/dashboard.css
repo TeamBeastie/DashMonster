@@ -223,6 +223,7 @@ TEMPERATURE AND FORECAST
  .col-xs-12.status-temp {
 	background: #000000;
 	font-size: 4em;
+  font-weight: 700;
 	line-height: 110%;
 	padding-top: 2px;
 	padding-right: 2px;

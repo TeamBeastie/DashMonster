@@ -18,35 +18,6 @@ Template.stopEditor.onDestroyed(function() {
   };
 })
 
-// THIS MAY NOT BE RIGHT, ERIK! 
-
-Template.locationStop.onCreated(function() {
-  var template = this;
-  var currentStop = {};
-  // make a copy of the Stop
-  Object.keys(template.data).forEach(function(e, i) {
-    currentStop[e] = template.data[e];
-  })
-  Session.set(CURRENT_STOP, currentStop);
-});
-
-Template.locationStop.onDestroyed(function() {
-  console.log(this.data);
-  // if this a brand new stop that's never been saved, delete it
-  if (this.data.isNew) {
-    Stops.remove(this.data._id);
-  };
-})
-
-
-Template.locationStop.helpers({
-  lineNumber: function(){
-    return Session.get(CURRENT_STOP).lineId;
-  }
-});
-
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ DELETE IF NECESSARY
-
 Template.stopEditor.helpers({
   // TODO: make one function that can be used instead of these separate functions
   lineDescription: function () {
