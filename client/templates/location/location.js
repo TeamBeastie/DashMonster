@@ -38,7 +38,8 @@ Template.location.helpers({
         center: new google.maps.LatLng(location.lat, location.lng),
         zoom: 14,
         disableDefaultUI: true,
-        zoomControl: true
+        zoomControl: true,
+        scrollwheel: false
       }
     }
   },
@@ -52,24 +53,36 @@ Template.location.events({
     var map = GoogleMaps.maps.map.instance;
     var lat = Session.get('lat');
     var lng = Session.get('lng');
-    map.panTo({lat: Number(lat), lng:Number(lng)});
+    if (lat && lng) {
+      map.panTo({lat: Number(lat), lng:Number(lng)});
+    };
   },
   'click .cancel': function(e) {
     Router.go("profile");
   },
   'click .save': function(e) {
+    var $nameField = $('.name-input');
+    var newName = $nameField.val();
     // clear the session lat/lng so that we redetermine the location
     // when the Dashboard loads up again
     Session.set('lat', null);
     Session.set('lng', null);
     // save the new lat and lng, then go back to the profile
-    Locations.update(location._id, {$set: {lat: location.lat, lng: location.lng}});
-    Router.go("profile");
+    Locations.update(
+      location._id,
+      {$set:{lat: location.lat, lng: location.lng, name: newName}},
+      function() {Router.go("profile")}
+    );
   },
   'click .delete-location': function(e) {
     if (window.confirm('Delete "' + this.name + '"?')) {
-      Locations.remove(this._id);
-      Router.go("/profile");
+      Locations.remove(this._id, function() {
+        // clear the session lat/lng so that we redetermine the location
+        // when the Dashboard loads up again
+        Session.set('lat', null);
+        Session.set('lng', null);
+        Router.go("/profile")
+      });
     };
   },
   'submit .name-change': function(e, t) {
