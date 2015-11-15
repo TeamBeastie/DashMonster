@@ -82,11 +82,9 @@ Template.dashboard.helpers({
       return "locating...";
     }
   },
-
   locationObject: function() {
       return Session.get('location');
   },
-
   weather: function() {
     var weather = {loadingMsg: "...Getting Weather..."};
     var weatherData = Session.get("weatherData");

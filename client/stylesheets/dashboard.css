@@ -51,7 +51,7 @@ a:hover {
 	border-bottom: solid 1px #999999;
 	border-radius: 0;
 
-		
+
 }
 
 .col-xs-6 {
@@ -93,12 +93,12 @@ a:hover {
 	border: 1px solid #000;
 	border-radius: 5px;	
 
+
 }
 
 .exit button:hover {
-	color: #999;
 	border: 1px solid #FF0018;
-	border-radius: 5px;	
+	border-radius: 5px;
 }
 
 
@@ -273,7 +273,7 @@ TEMPERATURE AND FORECAST
          stroke-width: 1;
          fill: none;
        }
-      
+
        .axis {
          shape-rendering: crispEdges;
        }
