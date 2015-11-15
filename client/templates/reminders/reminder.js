@@ -8,7 +8,15 @@ Template.reminder.helpers({
 
 	remindersCount: function (){
     return Reminders.find().count();
-  	}
+	},
+
+	remindersLabel: function() {
+		var label = "REMINDERS"
+		if (Reminders.find().count() === 1) {
+			label = "REMINDER"
+		};
+		return label;
+	}
 });
 
 Template.remindersTemplate.events({
