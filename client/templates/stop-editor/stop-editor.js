@@ -18,6 +18,8 @@ Template.stopEditor.onDestroyed(function() {
   };
 })
 
+
+
 Template.stopEditor.helpers({
   // TODO: make one function that can be used instead of these separate functions
   lineDescription: function () {
