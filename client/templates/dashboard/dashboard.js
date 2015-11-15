@@ -8,32 +8,11 @@ const TIMEOUT_FETCH_ARRIVALS = 30 * 1000;
 const TIMEOUT_FETCH_WEATHER = 15 * 60 * 1000;
 const TIMEOUT_UPDATE_ETAS = 1 * 1000;
 
-Template.dashboard.onCreated(function() {
-  // var tmpl = this;
-  // Session.set("now", new Date());
-  // Session.setDefault('etas', {});
-  // Session.setDefault('trimet', {});
-  // // getAllArrivals(tmpl);
-  // intervalTime = Meteor.setInterval(function() {
-  //   Session.set("now", new Date());
-  // }, 1000);
-  // intervalWeather = Meteor.setInterval(function() {
-  //   getWeather();
-  // }, TIMEOUT_FETCH_WEATHER);
-  // intervalFetchArrivals = Meteor.setInterval(function() {
-  //   getAllArrivals(tmpl);
-  // }, TIMEOUT_FETCH_ARRIVALS);
-  // intervalUpdateETAs = Meteor.setInterval(function() {
-  //   updateETAs();
-  // }, TIMEOUT_UPDATE_ETAS)
-})
-
 Template.dashboard.onRendered(function() {
   var tmpl = this;
   Session.set("now", new Date());
   Session.setDefault('etas', {});
   Session.setDefault('trimet', {});
-  // getAllArrivals(tmpl);
   intervalTime = Meteor.setInterval(function() {
     Session.set("now", new Date());
   }, 1000);
