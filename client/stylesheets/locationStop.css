@@ -1,11 +1,22 @@
 .location-lines {
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: 15px;
+	margin-right: 15px;
 	margin-top: 5px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #999;
 }
 
+.stop-edit-btn {
+
+	text-align: center;
+	font-size: 2em;
+	padding-top: 1em;
+
+}
+
+.stop-edit-btn span{
+	color: #FFF;
+}
 
 .line-desc,
 .direction-desc {

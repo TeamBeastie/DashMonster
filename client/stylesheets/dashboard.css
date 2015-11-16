@@ -70,6 +70,10 @@ a:hover {
 
 }
 
+.col-xs-2 {
+	text-align: right;
+}
+
 .exit {
 	background: #000;
 	color: #FF0018;
