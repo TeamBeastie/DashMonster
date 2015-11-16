@@ -30,13 +30,13 @@ Template.dashboard.onRendered(function() {
   // when they return to the dashboard it won't show them the new stops
   var currentLocation = Session.get('location');
   if (currentLocation) {
-    console.log("location is set so refresh our stops");
     Session.set('stops', Stops.find({locationId: currentLocation._id}).fetch());
     getAllArrivals(this);
   };
 })
 
 Template.dashboard.onDestroyed(function() {
+
   Meteor.clearInterval(intervalTime);
   Meteor.clearInterval(intervalFetchArrivals);
   Meteor.clearInterval(intervalWeather);
@@ -78,7 +78,6 @@ Template.dashboard.helpers({
     var weatherData = Session.get("weatherData");
     if (weatherData) {
       weatherData = JSON.parse(weatherData);
-      console.log(weatherData);
       weather.temp = Math.round(weatherData.currently.temperature);
       weather.conditions = weatherData.currently.summary;
       weather.loadingMsg = false;
@@ -99,7 +98,6 @@ Template.dashboard.helpers({
     if (weatherData) {
       precipitation.loadingMsg = false;
       weatherData = JSON.parse(weatherData);
-      console.log(weatherData);
       var points =  weatherData.minutely.data;
       precipitation.precipArray = points.map(function(obj){
         return obj.precipIntensity;
@@ -117,7 +115,6 @@ Template.dashboard.helpers({
   },
   hasStops: function() {
     var stops = Session.get('stops');
-    console.log(stops);
     if (stops && stops.length > 0) {
       return true;
     } else {

@@ -9,10 +9,17 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3 login-area signup">
     <form class="signup">
+    {{#if errorMessages}}
+      <div class="list-errors">
+        {{#each errorMessages}}
+          <div class="list-item">{{this}}</div>
+        {{/each}}
+      </div>
+    {{/if}}
       <div class="col-sm-10 col-sm-push-1">
-        <input class="input signup-input" type="email" placeholder="email address" name="email" autofocus>
-        <input class="input signup-input" type="password" placeholder="choose a password" name="password">
-        <input class="input signup-input" type="password" placeholder="confirm password" name="confirm">
+        <input class="input signup-input {{errorClass 'email'}}" type="email" placeholder="email address" name="email" autofocus>
+        <input class="input signup-input {{errorClass 'password'}}" type="password" placeholder="choose a password" name="password">
+        <input class="input signup-input {{errorClass 'confirm'}}" type="password" placeholder="confirm password" name="confirm">
       </div>
     <!-- <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2 login-button create-button"> -->
         <input class="login-button create-button" type="submit" value="Create Account">

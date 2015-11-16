@@ -42,6 +42,11 @@
 	margin-right: 10%;*/
 }
 
+div.col-xs-12 div.col-sm-6 button {
+	/*margin-left: -15px;*/
+	/*margin-right: -15px;*/
+}
+
 .delete {
 	padding: 5px;
 	color: #FF0018;
