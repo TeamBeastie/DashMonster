@@ -153,17 +153,15 @@ DATE AND TIME
 ////////////////////////////////////////////////////*/
 
 #date-time-bar {
-
-	background: #000000;
+	background: transparent;
 	text-align: center;
 	border: 0;
 	margin-bottom: 15px;
 }
 
 #date {
-
-	background: #000000;
-	color: white;
+	background: transparent;
+	color: #999;
 	font-weight: 300;
 	padding-top: 8px;
 	font-size: 1.5em;
@@ -171,7 +169,7 @@ DATE AND TIME
 
 
 #clock {
-	background: #000000;
+	background: transparent;
 	color: white;
 	text-align: center;
 	font-family: 'Open Sans Condensed';
@@ -184,7 +182,6 @@ DATE AND TIME
 }
 
 .actual-time {
-
 	color: white;
 	font-size: 1em;
 	padding: 0;
