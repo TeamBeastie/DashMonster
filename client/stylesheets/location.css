@@ -19,7 +19,7 @@
   margin-top: 10px;
 }
 
-.button-row {
+/*.button-row {
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 5px;
@@ -27,7 +27,7 @@
 	padding-right: 10px;
 
 }
-
+*/
 
 
 .cancel,
@@ -68,7 +68,16 @@
 .use-current {
 
 	border-color: #5767CC;
-	min-width: 194px;
+/*	min-width: 194px;*/
+}
+
+.use-current span {
+	vertical-align: -.1em;
+	margin-right: .2em;
+}
+
+.use-current:hover span {
+	color: #FFF;
 }
 
 .use-current:hover {

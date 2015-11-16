@@ -119,7 +119,14 @@
     {{> dashboardStop}}
   {{/each}}
 {{else}}
-  <button class='add-stop'>Add a Stop</button>
+    <div class="row">
+    <div class="col-xs-8 col-xs-push-4 view-link">
+      <button class="add-location add-stop">
+        <span class="btn-text">ADD A STOP</span>
+        <span class="glyphicon glyphicon-plus-sign"></span>
+      </button>
+    </div>
+  </div>
 {{/if}}
 </div>
   <script type="text/javascript">
