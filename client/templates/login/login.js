@@ -1,3 +1,18 @@
+var ERRORS_KEY = 'signinErrors';
+
+Template.login.onCreated(function() {
+  Session.set(ERRORS_KEY, {});
+});
+
+Template.login.helpers({
+  errorMessages: function() {
+    return _.values(Session.get(ERRORS_KEY));
+  },
+  errorClass: function(key) {
+    return Session.get(ERRORS_KEY)[key] && 'error';
+  }
+})
+
 Template.login.events({
   'submit form': function(event, template) {
     event.preventDefault();
@@ -16,17 +31,14 @@ Template.login.events({
       errors.password = 'Password is required';
     }
 
-    // Session.set(ERRORS_KEY, errors);
+    Session.set(ERRORS_KEY, errors);
     if (_.keys(errors).length > 0) {
       return;
     }
 
     Meteor.loginWithPassword(email, password, function(error) {
       if (error) {
-        // return Session.set(ERRORS_KEY, {'none': error.reason});
-        console.log("error logging in!");
-        console.log(error);
-        return;
+        return Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
       Router.go('dashboard');

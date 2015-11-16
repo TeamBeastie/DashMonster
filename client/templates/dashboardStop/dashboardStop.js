@@ -50,6 +50,36 @@ Template.dashboardStop.helpers({
         var words = lineName.split(" ");
         return words[0] + " " + words[1];
       };
+      return lineName;
     };
+  },
+  hasMultipleEntries: function(route) {
+    var matches = _.keys(Session.get('trimet')).filter(function(e) {
+      return e.split("-").pop() === String(route);
+    });
+    return true;
+    return matches.length > 1;
+  },
+  direction: function(stopId, route) {
+    var k = String(stopId) + "-" + String(route);
+    var trimetData = Session.get('trimet')[k];
+    if (trimetData) {
+      var arrivals = JSON.parse(trimetData).resultSet.arrival;
+      var firstMatch = null;
+      for (var i = 0; i < arrivals.length; i++) {
+        var e = arrivals[i];
+        if (e.route === route) {
+          firstMatch = e;
+          break;
+        };
+      }
+      var lineName = firstMatch.shortSign;
+      var regexTo = / to /i;
+      var index = lineName.search(regexTo);
+
+      lineName = lineName.substring(index++);
+
+      return lineName;
+    }
   }
 })

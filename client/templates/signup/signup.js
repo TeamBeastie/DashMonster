@@ -1,3 +1,18 @@
+var ERRORS_KEY = 'signupErrors';
+
+Template.signup.onCreated(function() {
+  Session.set(ERRORS_KEY, {});
+});
+
+Template.signup.helpers({
+  errorMessages: function() {
+    return _.values(Session.get(ERRORS_KEY));
+  },
+  errorClass: function(key) {
+    return Session.get(ERRORS_KEY)[key] && 'error';
+  }
+})
+
 Template.signup.events({
   'submit form': function(event, template) {
     event.preventDefault();
@@ -19,24 +34,18 @@ Template.signup.events({
       errors.confirm = "Passwords don't match";
     }
 
-    // Session.set(ERRORS_KEY, errors);
+    Session.set(ERRORS_KEY, errors);
     if (_.keys(errors).length > 0) {
-      console.log(_.keys(errors));
-      console.log(errors);
       return;
     }
 
     Accounts.createUser({
       password: password,
-      email: email,
-      profile: {
-        name: displayname
-      }
+      email: email
     }, function (error) {
       if (error) {
-        console.log("error creating new account!");
         console.log(error);
-        return;
+        return Session.set(ERRORS_KEY, {'none': error.reason})
       }
       Session.set('newAccount', true);
     });
