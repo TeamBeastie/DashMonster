@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="col-xs-12 label">
-      Location Name
+      Name
     </div>
   </div>
 
@@ -33,25 +33,37 @@
   </div>
 
   <div class="row">
+    <div class="col-xs-12 label">
+      Location
+    </div>
+  </div>
+
+  <div class="row">
     <div class="map-container">
       {{> googleMap name="map" options=mapOptions}}
     </div>
   </div>
 
   <div class="row">
+<!--   <div class="col-xs-12">
+ --> <h6>Drag Map to Change Location</h6>
+<!--   </div>
+ -->  </div>
+
+  <div class="row">
     <div class="buttons col-xs-12 button-row">
 
     <div class="row">
-        <div class="col-sm-12 cu-btn">
-        <button class="use-current btn btn-info">USE CURRENT LOCATION</button>
+        <div class="col-xs-12 cu-btn">
+        <button class="use-current btn btn-info"><span class="glyphicon glyphicon-map-marker"></span> USE CURRENT LOCATION</button>
         </div>
 
-        <div class="col-xs-6 ca-btn">
-        <button class="cancel btn btn-danger">CANCEL</button>
+        <div class="col-sm-6 ca-btn">
+        <button class="cancel btn btn-danger">RESET LOCATION</button>
         </div>
 
-        <div class="col-xs-6 sa-btn">
-        <button class="save btn btn-success">SAVE</button>
+        <div class="col-sm-6 sa-btn">
+        <button class="save btn btn-success">SAVE LOCATION</button>
         </div>
 
 
