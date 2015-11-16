@@ -26,7 +26,8 @@
 .stop-desc {
 	font-size: 1.3em;
 	text-align: left;
-	padding-left: 0;
+	padding-top: 3px;
+	padding-left: 15px;
 	color: #777;
 
 }
