@@ -57,7 +57,7 @@ Template.dashboardStop.helpers({
     var matches = _.keys(Session.get('trimet')).filter(function(e) {
       return e.split("-").pop() === String(route);
     });
-    return true;
+    // return true;
     return matches.length > 1;
   },
   direction: function(stopId, route) {

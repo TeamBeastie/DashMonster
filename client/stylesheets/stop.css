@@ -7,13 +7,23 @@ TRANSIT ROUTES
 	font-size: 2em;
 }
 
+.direction {
+  text-align: left;
+  text-transform: uppercase;
+  color: #777;
+  font-size: 0.6em;
+  margin-top: -1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .bus-line {
 	background: transparent;
 	text-align: left;
 	font-weight: 700;
 	color: #A565CC;
 /*	font-size: 1.7em;
-*/	
+*/
 	font-size: 1.3em;
 	padding-right: 5px;
 	padding-top: .3em;
