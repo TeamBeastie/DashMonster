@@ -13,6 +13,8 @@ Template.dashboard.onRendered(function() {
   Session.set("now", new Date());
   Session.setDefault('etas', {});
   Session.setDefault('trimet', {});
+  Session.set('lat', null);
+  Session.set('lng', null);
   intervalTime = Meteor.setInterval(function() {
     Session.set("now", new Date());
   }, 1000);
