@@ -101,14 +101,12 @@
 <div class="row">
 <div class="col-xs-12 precip">
 {{#with precipitation}}
-  {{#if loadingMsg}}
-    <p>{{loadingMsg}}</p>
-  {{else}}
+  {{#unless loadingMsg}}
     <!-- <div id="viz-wrapperP"></div> -->
     <!-- {{#each precipArray}} -->
       <!-- <span>{{this}}, </span> -->
     <!-- {{/each}} -->
-  {{/if}}
+  {{/unless}}
 {{/with}}
 </div>
 </div>

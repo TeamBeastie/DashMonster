@@ -8,7 +8,7 @@
 
 .stop-edit-btn {
 
-	text-align: center;
+	text-align: right;
 	font-size: 2em;
 	padding-top: 1em;
 
@@ -31,7 +31,7 @@
 }
 
 .direction-desc {
-	
+
 }
 
 .stop-desc {

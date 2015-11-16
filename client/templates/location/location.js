@@ -1,5 +1,6 @@
 var markers = null;
 var location = null; // this.data
+var startLocation = {};
 
 Template.location.onRendered(function() {
   this.autorun(function () {
@@ -9,6 +10,7 @@ Template.location.onRendered(function() {
     };
   });
   location = this.data;
+  startLocation = {lat: location.lat, lng: location.lng};
   markers = [];
   GoogleMaps.load();
   GoogleMaps.ready('map', function(map) {
@@ -64,7 +66,13 @@ Template.location.events({
     };
   },
   'click .cancel': function(e) {
-    Router.go("profile");
+    // Router.go("profile");
+    var map = GoogleMaps.maps.map.instance;
+    var lat = startLocation.lat;
+    var lng = startLocation.lng;
+    if (lat && lng) {
+      map.panTo({lat: Number(lat), lng:Number(lng)});
+    };
   },
   'click .save': function(e) {
     var $nameField = $('.name-input');
@@ -76,8 +84,7 @@ Template.location.events({
     // save the new lat and lng, then go back to the profile
     Locations.update(
       location._id,
-      {$set:{lat: location.lat, lng: location.lng, name: newName}},
-      function() {Router.go("profile")}
+      {$set:{lat: location.lat, lng: location.lng, name: newName}}
     );
   },
   'click .delete-location': function(e) {
