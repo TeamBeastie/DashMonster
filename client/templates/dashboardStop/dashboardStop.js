@@ -74,12 +74,11 @@ Template.dashboardStop.helpers({
         };
       }
       var lineName = firstMatch.shortSign;
-      var regexTo = / to /i;
-      var index = lineName.search(regexTo);
-
-      lineName = lineName.substring(index++);
-
       return lineName;
+      // var regexTo = / to /i;
+      // var index = lineName.search(regexTo);
+      // lineName = lineName.substring(index++);
+      // return lineName;
     }
   }
 })
