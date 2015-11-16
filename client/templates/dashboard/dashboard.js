@@ -24,7 +24,16 @@ Template.dashboard.onRendered(function() {
   }, TIMEOUT_FETCH_ARRIVALS);
   intervalUpdateETAs = Meteor.setInterval(function() {
     updateETAs();
-  }, TIMEOUT_UPDATE_ETAS)
+  }, TIMEOUT_UPDATE_ETAS);
+  // refresh the `stops` Session var on page load
+  // it's possible that someone just edited the stops that they care about and
+  // when they return to the dashboard it won't show them the new stops
+  var currentLocation = Session.get('location');
+  if (currentLocation) {
+    console.log("location is set so refresh our stops");
+    Session.set('stops', Stops.find({locationId: currentLocation._id}).fetch());
+    getAllArrivals(this);
+  };
 })
 
 Template.dashboard.onDestroyed(function() {
@@ -105,6 +114,28 @@ Template.dashboard.helpers({
   },
   stops: function() {
     return Session.get('stops');
+  },
+  hasStops: function() {
+    var stops = Session.get('stops');
+    console.log(stops);
+    if (stops && stops.length > 0) {
+      return true;
+    } else {
+      return false;
+    };
   }
-
 });
+
+Template.dashboard.events({
+  'click .add-stop': function(e, t) {
+    var location = Session.get('location');
+    var newStop = {
+      locationId: location._id,
+      userId: Meteor.userId(),
+      isNew: true
+    };
+    Stops.insert(newStop, function(err, id) {
+      Router.go("stopEditor", {_id: id});
+    });
+  }
+})

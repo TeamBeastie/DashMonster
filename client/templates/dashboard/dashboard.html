@@ -114,10 +114,13 @@
 </div>
 
 <!-- Transit lines and arrival times -->
-{{#each stops}}
-  {{> dashboardStop}}
-{{/each}}
-
+{{#if hasStops}}
+  {{#each stops}}
+    {{> dashboardStop}}
+  {{/each}}
+{{else}}
+  <button class='add-stop'>Add a Stop</button>
+{{/if}}
 </div>
   <script type="text/javascript">
 
