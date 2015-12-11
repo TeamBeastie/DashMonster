@@ -1,0 +1,10 @@
+{
+  // Custom Globals
+  "globals": {
+    "Meteor": false,
+    "Locations": false,
+    "Stops": false,
+    "Reminders": false,
+    "BusRoutes": false
+  }
+}
